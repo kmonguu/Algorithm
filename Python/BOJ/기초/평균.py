@@ -13,9 +13,9 @@ for i in range(num):                      # for문을 이용하여 num까지 범
     if M < score[i]:                      # if문으로 입력받은 점수 중 최댓값을 찾는다.
         M = score[i]
 
-for i in range(num):                     # for문을 이용하여 시험점수를 하나씩 꺼내면서
-    score[i] = score[i]/M*100            # (입력받은 점수/최고 점수*100)식으로 새로운 점수를 구한 뒤 score[] 리스트에 저장한다.
-    sum += score[i]                      # 새로운 점수들의 평균을 구하기 위해 더한 값을 sum에 저장
+for i in range(num):                      # for문을 이용하여 시험점수를 하나씩 꺼내면서
+    score[i] = score[i]/M*100             # (입력받은 점수/최고 점수*100)식으로 새로운 점수를 구한 뒤 score[] 리스트에 저장한다.
+    sum += score[i]                       # 새로운 점수들의 평균을 구하기 위해 더한 값을 sum에 저장
 
-result = sum/num                         # 점수를 더한 합을 과목 수로 나누어 result라는 평균을 구함
+result = sum/num                          # 점수를 더한 합을 과목 수로 나누어 result라는 평균을 구함
 print(result)

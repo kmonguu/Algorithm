@@ -15,4 +15,7 @@ for _ in range(C):
 
     rate = (count/score[0])*100               # 평균점수를 넘는 학생의 비율을 구하기 위해 rate변수에 (평균점수보다 큰 점수를 가진 학생/학생 수)*100을 계산한 값을 저장한다.
     print("{:.3f}%".format(rate))             # format을 활용하여 rate 변수에 저장된 값을 소수점 셋째 자리까지 출력하도록 한다.
+
     
+# 위 코드에서 count변수를 0으로 초기화하고 for 구문을 다음과 같이 한 줄로 나타낼 수 있다.
+count = sum([1 for i in score[1:] if i > a])

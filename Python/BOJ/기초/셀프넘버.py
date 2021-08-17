@@ -4,7 +4,7 @@
 # d() 함수에서 구한 수열과 1부터 10000까지 수를 비교하여 수가 겹치면 셀프 넘버가 아니므로 제외하고 겹치지 않는 셀프 넘버만 출력
 
 def d(n):
-  result = int(n)         # n이라는 변수에 숫자를 입력받고 result에 저장한다.
+  result = int(n)         # 매개변수로 받은 n을 result에 저장한다.
   for i in list(str(n)):  # int형 변수 n을 string형으로 변환 후 for문 변수 i를 생성
     result += int(i)      # n의 각 자리수 i를 result에 저장된 숫자와 더해 다시 result에 저장한다. 
   return result

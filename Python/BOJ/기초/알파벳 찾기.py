@@ -9,6 +9,11 @@ for i in alphabet:                  # alphabet 리스트의 각각의 요소를 
   print(S.find(chr(i)), end= ' ')   # chr 함수를 사용하여 아스키코드에 해당하는 숫자를 문자열로 변환 후 find 함수로 입력받은 문자열 S안에서 문자를 찾아 위치를 출력 
   
   
+# list를 생성하지 않고 푸는 방법
+for alphabet in range(ord("a"), ord("z") + 1):  # ord를 사용하여 특정한 문자 a와 z를 아스키 코드로 변환하여 for문을 범위만큼 반복합니다.
+  print(S.find(chr(alphabet)), end=' ')         # 변수 alphabet에 저장된 아스키 코드를 chr을 이용하여 문자로 변환하고 문자열 S안에서 문자를 찾아 출력합니ㅏㄷ.
+  
+  
 # find 함수와 index 함수
 # find 함수는 문자열에서 사용가능하고 찾는 문자가 문자열 안에 포함되지 않으면 -1을 출력
 # index 함수는 리스트, 튜플에도 사용가능하며 찾는 문자가 문자열 안에 없다면 에러 발생

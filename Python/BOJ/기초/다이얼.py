@@ -15,3 +15,16 @@ for i in dial:                    # dial 리스트의 요소를 i에 저장
                                   # 다이얼에서 숫자 1을 누르는데 2초가 걸리고 이후에 1초씩 걸리므로 총 3초를 time에 더해준다.
 
 print(time)
+
+
+# 2중 for문을 사용한 입력받은 단어 word의 알파벳이 dial 리스트 안에 있는지 확인하여 푸는 방법
+dial = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
+word = input()
+
+time = 0
+for w in word:                    # 입력받은 단어 word의 요소를 for문 변수 w에 저장
+  for i in range(8):              # dial에 담긴 문자열의 갯수 8을 for문의 범위로 하여 for문 변수 i선언
+    if w in dial[i]:              # if문을 사용하여 dial 리스트에 for문 변수 i를 이용하여 입력받은 단어의 요소 w가 dial 리스트에 속해있는 경우
+      time += (i + 3)             # 전화를 걸 때 걸리는 시간 총 3초를 더하여 time 변수에 저장
+
+print(time)

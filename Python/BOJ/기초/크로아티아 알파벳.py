@@ -5,6 +5,6 @@
 cro = ['c=', 'c-', 'dz=', 'd-', 'lj', 'nj', 's=', 'z=']
 word = input()
 
-for i in cro:                     # cro 리스트의 요소를 변수 i에 담아준다.
+for i in cro:                     # cro 리스트의 요소 
   word = word.replace(i, '.')     # 입력받은 문자열 word에 변수 i에 담긴 문자열이 있다면 갯수를 세기 위한 임의의 문자인 "."으로 바꾸어 수정한다.
 print(len(word))                  # word 문자열에 있던 크로아티아 알파벳은 . 문자로 바뀌었으므로 변수 word의 길이를 세면 사용된 크로아티아 알파벳의 갯수를 알 수 있다.

@@ -17,8 +17,9 @@ for _ in range(num):
       continue      
 
     if i in w:           # w 배열 안에 for문 변수 i가 있을 경우 
-      count = False      # 이미 배열 안에 해당 문자가 있다는 의미이므로 False를 저장
-    
+      count = False      # 해당 단어는 그룹 단어가 아니므로 count에 False를 저장
+      break              # 그룹 단어가 아닐 경우 불필요한 연산을 막기 위해 break문 사용
+      
     w.append(i)          # w 배열 안에 변수 i가 없다면 w 배열 안에 변수 i를 담는다.
     
   if check:              # check가 True일 경우

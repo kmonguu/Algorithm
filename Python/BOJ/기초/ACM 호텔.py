@@ -23,3 +23,25 @@ for _ in range (Test_case):
 
   else:
     print(Y, ho, sep='')              # 호수가 10보다 크다면 층수와 호수를 붙여서 출력
+    
+    
+# while문을 사용하지 않고 층과 호를 구해 속도를 개선할 수 있다.
+# 층수 구하기 식 = N % H
+# 호수 구하기 식 = math.ceil(N/H)
+
+import math
+
+Test_case = int(input())
+
+for _ in range (Test_case):
+  H, W, N = map(int, input().split())
+
+  Y = (N%H)   
+  ho = math.ceil(N/H)
+
+  if ho < 10:
+    print(Y, '0', ho, sep='')
+
+  else:
+    print(Y, ho, sep='')
+

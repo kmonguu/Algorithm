@@ -7,5 +7,5 @@ A, B = map(int, sys.stdin.readline().split())
 print(A+B)
 
 
-# 다른 풀이)
-print(sum(map(int, input().split())))            # sys 모듈을 사용하지 않고 내장 함수 sum을 사용하여 풀 수 있다.
+# 다른 풀이) 내장 함수 sum을 사용하여 푸는 
+print(sum(map(int, input().split())))            

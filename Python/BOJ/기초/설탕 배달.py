@@ -17,3 +17,35 @@ while N >= 0 :		      # 입력받은 N이 0이상일 때 참
 else:			              # 입력받은 N이 0보다 작을 경우
   print(-1)		          # -1을 출력한다.
   
+	
+	
+# while - else문을 사용하여 문제를 풀 수도 있지만 if - else 문을 사용하여 코드의 가독성을 높일 수 있다.
+
+N = int(input())
+count = 0
+
+while N > 0 :
+  if N%5 == 0:
+    count += (N//5)   
+    break
+
+  N -= 3
+  count += 1
+
+if N < 0:
+  print(-1)
+else:
+  print(count)
+
+# 다른 풀이) 3x + 5y = N의 식에서 x와 y의 최솟값을 구하는 문제로 간단히 요약할 수 있다. 이 식을 사용하여 다음과 같이 풀이할 수 있다.
+
+N = int(input())
+count = 0
+
+for i in range(N//3 + 1):
+  for j in range(N//5 + 1):
+    if (3 * i + 5 * j) == N:
+      print(i + j)
+      exit()
+
+print(-1)

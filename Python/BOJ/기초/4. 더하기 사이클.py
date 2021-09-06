@@ -4,18 +4,18 @@
 # 결론적으로 변수 num과 N이 같아질 때까지 while문을 실행하고 //와 %을 활용하여  필요한 숫자를 만든 뒤 사이클이 돌 때마다 count를 1씩 높이는 것이다. 
 
 N = int(input()) 
-num = N           # 입력받은 값을 num에 저장
+num = N                     # 입력받은 값을 num에 저장
 count = 0
 
 while True:
-    a = num//10   # 입력받은 숫자의 몫을 받아 a에 저장
-    b = num%10    # 입력받은 숫자의 나머지를 b에 저장
-    c = (a+b)%10  # a와 b를 더한 값에 10을 나눈 나머지를 c에 저장한다.
-    num = b*10+c  # num에는 b에 10을 곱하고 c를 더한 값을 num에 저장한다. 
+    a = num//10             # 입력받은 숫자의 몫을 받아 a에 저장
+    b = num%10              # 입력받은 숫자의 나머지를 b에 저장
+    c = (a+b)%10            # a와 b를 더한 값에 10을 나눈 나머지를 c에 저장한다.
+    num = b*10+c            # num에는 b에 10을 곱하고 c를 더한 값을 num에 저장한다. 
 
-    count += 1    # 사이클을 구하기 위해 count에 1을 더해준다.
+    count += 1              # 사이클을 구하기 위해 count에 1을 더해준다.
 
-    if(num == N): # 만약 num과 N이 같다면 while문 종료
+    if(num == N):           # 만약 num과 N이 같다면 while문 종료
         break
 print(count)
 

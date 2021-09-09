@@ -18,3 +18,22 @@ while True:
     print('right')                                              # 직각삼각형이므로 "right"를 출력
   else:
     print('wrong')                                              # 아니라면 "wrong"을 출력
+
+    
+
+    
+# 다른 풀이
+# 세 변의 길이는 양의 정수이기 때문에 내장함수 sum을 사용하지 않고 첫 번째 요소의 값이 0이 아닌지만 확인하면 됌
+
+import sys
+input = sys.stdin.readline
+
+while True:
+  pita = sorted(map(int, input().split()))                      # 입력 받으면서 바로 오름차순정렬
+  if pita[0] == 0:                                              # 첫 번째 요소의 값이 0이면 break
+    break
+  
+  if ((pita[0] ** 2) + (pita[1] ** 2)) == pita[2] ** 2:         # 피타고라스의 정리
+    print('right')
+  else:
+    print('wrong')

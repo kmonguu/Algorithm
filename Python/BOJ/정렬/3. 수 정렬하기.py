@@ -2,7 +2,7 @@
 # 수를 입력받고 오름차순으로 정렬한 결과를 한 줄에 하나씩 출력
 
 
-import sys                                  # input으로 입력을 받으면 메모리 초과가 날 수 있으므로 sys모듈 사용
+import sys                                  # 입력받는 시간을 줄이기 위해 sys 모듈 사용
 input = sys.stdin.readline
 
 num = [0]*10001                             # 입력받을 수의 최대 크기만큼 배열을 생성한 뒤 0으로 초기화

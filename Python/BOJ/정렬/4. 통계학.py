@@ -32,3 +32,28 @@ else:
   print(result[0][0])
 
 print(max(num)-min(num))                                                # 범위 (오름차순으로 정렬된 num 배열의 최댓값고 최솟값의 차를 구함)
+
+
+
+
+# 다른 풀이
+import sys
+input = sys.stdin.readline
+
+from collections import Counter
+
+N = int(input())
+num = sorted([int(input()) for _ in range(N)])
+
+print(round(sum(num)/N))
+print(num[N//2])
+                                                                  # Counter 모듈의 most_common 메소드는 카운팅된 딕셔너리에서 카운팅 횟수가 가장 많은 순으로 정렬해줌
+                                                                  
+                                                                  # 정렬된 num에서 Counter 모듈을 이용하여 num 배열에 입력된 수의 횟수를 세고,
+result = Counter(num).most_common()                               #  most_common() 메소드를 이용하여 횟수가 많은 순으로 정렬하여 result에 
+if len(result) != 1 and result[0][1] == result[1][1]:             # 최빈값이 여러개이면
+    print(result[1][0])                                           # 최빈값 중 두번째로 작은값 출력
+else:
+  print(result[0][0])                                             # 최빈값이 1개이면 바로 출력
+
+print(num[-1] - num[0])                                           # num은 이미 정렬되어 있으므로 max, min 함수를 사용하지 않고 마지막 요소에서 첫번째 요소를 빼면 됨

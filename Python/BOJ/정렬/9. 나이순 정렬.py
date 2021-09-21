@@ -12,3 +12,13 @@ for i in word:
   print(i[0], i[1])                                     # 나이를 먼저 출력하고 나이가 같으면 입력받은 순으로 출력된다.
   
   
+
+  
+  
+# 다른 풀이
+import sys
+input = sys.stdin.readline
+
+word = [input() for _ in range(int(input()))]
+word.sort(key=lambda x: int(x.split()[0]))             # 첫 번째 요소인 나이를 공백으로 구분하여 오름차순 정렬 
+print("".join(word))                                   # for문을 사용하지 않고 word 리스트의 요소를 출력

@@ -13,3 +13,20 @@ dic = {x_set[i]:i for i in range(len(x_set))}     # s_set 의 길이를 범위�
 
 for i in x:                                       # 입력받은 배열이 저장된 x에서 for문을 실행하고
   print(dic[i], end=' ')                          # 딕셔너리를 이용하여 배열에 저장된 수에 매겨진 번호를 출력
+
+  
+  
+  
+  
+# 다른 풀이
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+numbers = list(map(int, input().split()))
+
+copy = sorted(set(numbers))
+location = dict(zip(copy, range(len(copy))))      # 내장 함수 zip을 이용하여 2개의 인자를 묶어준 뒤, dict 함수를 이용하여 딕셔너리로 변환
+
+print(*[location[num] for num in numbers])

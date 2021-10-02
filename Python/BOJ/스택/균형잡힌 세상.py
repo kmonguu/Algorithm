@@ -11,6 +11,7 @@ while True:
   string = input().rstrip()
 
   if string == '.':
+    print('YES')
     break
   
   stack = []

@@ -39,8 +39,8 @@ while True:
     
     
     
-    # 정답 코드
-    import sys
+# 정답 코드
+import sys
 input = sys.stdin.readline
 
 while True:

@@ -18,8 +18,7 @@ import sys
 input = sys.stdin.readline
 
 count = 1                               # 1부터 n까지의 자연수를 나타내는 count 변수를 1로 초기화
-stack = []                              # 스택이 저장될 리스트 stack 생성
-result = []                             # push, pop을 나타내는 '+', '-'를 저장할 result 리스트 생성
+stack, result = [], []                  # 스택이 저장될 리스트 stack 생성과 push, pop을 나타내는 '+', '-'를 저장할 result 리스트 생성
 
 for _ in range(int(input())):
   number = int(input())
@@ -39,3 +38,37 @@ if stack:                               # 만약 임의의 수열과 같은 수�
 else:
   for i in result:
     print(i)
+    
+    
+# 위의 결과를 출력하는 else문을 다음과 같이 나타낼 수 있다.
+else:
+  print("\n", join(result))
+  
+  
+  
+ 
+
+
+# 다른 풀이
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+numbers = [int(input()) for _ in range(n)]
+
+idx = 0                                           # 입력받은 numbers 배열의 인덱스를 나타내는 변수
+answer, stack = [], []
+for num in range(1, n + 1):                       # 1부터 n+1까지 num 변수를 선언하여 반복
+  stack.append(num)
+  answer.append("+")
+
+  while stack and stack[-1] == numbers[idx]:      # 1부터 n+1까지 stack에 넣는 것을 반복하다가 stack의 마지막 요소와 number의 요소와 같아진다면
+    stack.pop()                                   # stack 배열에서 pop
+    answer.append("-")                            # answer 배열에 '-'를 넣는다.
+    idx += 1                                      # 그리고 idx에는 +1을 하여 numbers 배열의 다음 인덱스를 나타내도록 한다.
+
+if stack:
+  print("NO")
+else:
+  print("\n".join(answer))

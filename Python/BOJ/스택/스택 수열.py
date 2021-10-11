@@ -47,8 +47,6 @@ else:
   
   
  
-
-
 # 다른 풀이
 
 import sys

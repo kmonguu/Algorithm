@@ -10,3 +10,16 @@
 # 다시 24에서 제일 위의 카드 2를 버리면 4라는 카드가 한장이 남고 반복이 종료된다.
 
 
+# 코드
+from collections import deque
+
+queue = deque()
+
+N = int(input())
+for card in range(1, N+1):
+  queue.append(card)
+
+while 1 < len(queue):                     # 카드가 한장이 남을 때까지 반복해야하므로 큐의 길이가 1보다 큰 경우를 조건으로 한다.
+  queue.popleft()                         # 가장 위에 놓인 카드를 버리기 위한 popleft()
+  queue.append(queue.popleft())           # 그다음 위에 놓은 카드를 꺼내고 바로 제일 아래로 append하면 제일 위에서 아래로 카드를 옮길 수 있다.
+print(*queue)

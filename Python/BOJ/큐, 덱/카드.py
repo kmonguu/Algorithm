@@ -23,3 +23,18 @@ while 1 < len(queue):                     # 카드가 한장이 남을 때까지
   queue.popleft()                         # 가장 위에 놓인 카드를 버리기 위한 popleft()
   queue.append(queue.popleft())           # 그다음 위에 놓은 카드를 꺼내고 바로 제일 아래로 append하면 제일 위에서 아래로 카드를 옮길 수 있다.
 print(*queue)
+
+
+
+
+# 다른 방법 : 리스트 컴프리헨션을 사용한 코드
+from collections import deque
+
+N = int(input())
+queue = deque([card for card in range(1, N + 1)])
+
+while len(queue) > 1:
+  queue.popleft()
+  queue.append(queue.popleft())
+
+print(*queue)

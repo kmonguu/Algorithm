@@ -28,3 +28,19 @@ while queue:                                        # 큐가 비어 있지 않�
     queue.append(queue.popleft())                   # 큐의 앞에서 뺀 다음 큐의 뒷쪽으로 append해준다.    
   result.append(queue.popleft())                    # K번째 수를 빼어 result 배열에 넣어준다.
 print('<' + ', '.join(map(str, result)) + '>')
+
+
+
+
+# 큐를 사용하지 않고 푼 방법
+N, K = map(int, input().split())
+
+numbers = list(range(1, N + 1))
+result = []
+idx = 0
+while numbers:
+  idx = (idx + (K - 1)) % len(numbers)              # idx + (K-1)을 한 값에 numbers[] 배열의 길이를 나눈 나머지를 idx변수에 저장한다.
+  result.append(numbers.pop(idx))                   # numbers[idx]값을 pop한 뒤 result 배열에 넣어준다.
+                                                    # numbers배열에서 값이 하나 제거되므로 numbers의 길이도 -1만큼 줄어들어 (idx + (K-1))에서 나눈 나머지를 구하고
+                                                    # result배열에 number[idx]를 넣는 것을 반복하면 답을 구할 수 있다.
+print("<" + ", ".join(map(str, result)) + ">")

@@ -18,8 +18,8 @@
 # prority의 요소가 popleft할 때마다 index 변수를 +1하여 queue에 담긴 요소를 뺄 때
 # 1씩 증가하는 index뿐 아니라 초기의 queue 인덱스를 고려해주어야 한다.
 
-# 실패한 코드
-# 아직 미완성.. M은 numbers이 인덱스 값으로 봐야하는데 == numbers[M]를 하면 오류발생
+# 틀린 코드
+# 아직 미완성..
 import sys
 input = sys.stdin.readline
 

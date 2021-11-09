@@ -27,14 +27,14 @@ N, M = map(int, input().split())
 index = list(map(int, input().split()))
 cnt = 0                                               # 이동 횟수를 저장하는 변수
 
-numbers = deque(list(range(1, N+1)))
+numbers = deque(list(range(1, N+1)))                  # numbers를 deque로 선언하며 동시에 1부터 N+1까지 리스트형태로 저장한다.
 for i in index:
   while True:
     if numbers[0] == i:                               # numbers의 첫 번째 인덱스의 값이 i와 같다면
       numbers.popleft()                               # 첫 번째 원소를 뽑아낸다.     
       break
 
-    else:                                             # 같지 않는다면
+    else:                                             # numbers의 첫 번째 인덱스의 값이 i와 같지 않는다면
       if numbers.index(i) < len(numbers)/2:           # 뽑아내려는 수의 위치 인덱스가 numbers의 길이를 반으로 나는 것보다 작은 경우
         while numbers[0] != i:                        # numbers의 첫 번째 인덱스의 값이 i와 같지 않을 때를 참으로 while문 반복
           numbers.append(numbers.popleft())           # 이 경우, 왼쪽으로 원소들을 이동시키는 것이 이동 횟수가 최소가 되므로 popleft()한 원소를 큐의 뒤로 append해준다.

@@ -38,3 +38,15 @@ for i in a:
       sosu += 1			                        # sosu + 1
 
 print(sosu)
+
+
+
+# 다른 방법) 에라토스테네스의 체 사용하기
+
+def prime(numbers, l):
+  for i in range(2, int(l ** 0.5) + 1):
+    if not numbers[i]:
+      for j in range(i**2, l, i):
+        numbers[j] = 1
+
+  return numbers

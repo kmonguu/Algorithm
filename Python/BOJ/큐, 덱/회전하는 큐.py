@@ -45,3 +45,5 @@ for i in index:
         cnt += 1                                      # 마찬가지로 한번 이동할 때 마다 cnt에 +1 해준다.
 
 print(cnt)
+
+

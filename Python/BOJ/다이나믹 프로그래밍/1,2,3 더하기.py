@@ -47,3 +47,13 @@ for _ in range(int(input())):
   num = int(input())
   print(sum(num))
   
+
+  
+  # 다른 코드
+  t = int(input())
+result = [1, 2, 4]
+for i in range(3, 10):
+    result.append(result[i - 3] + result[i - 2] + result[i - 1])
+for i in range(t):
+    n = int(input())
+    print(result[n - 1])

@@ -49,11 +49,28 @@ for _ in range(int(input())):
   
 
   
-  # 다른 코드
-  t = int(input())
+# 다른 코드
+t = int(input())
 result = [1, 2, 4]
 for i in range(3, 10):
-    result.append(result[i - 3] + result[i - 2] + result[i - 1])
+  result.append(result[i - 3] + result[i - 2] + result[i - 1])
 for i in range(t):
-    n = int(input())
-    print(result[n - 1])
+  n = int(input())
+  print(result[n - 1])
+  
+  
+  
+# dp 테이블을 이용한 풀이
+
+import sys
+input = sys.stdin.readline
+
+dp = [0] * 11
+dp[1], dp[2], dp[3] = 1, 2, 4
+for i in range(4, 11):
+  dp[i] = dp[i - 1] + dp[i - 2] + dp[i - 3]
+
+t = int(input())
+for _ in range(t):
+  n = int(input())
+  print(dp[n])

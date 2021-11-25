@@ -11,12 +11,12 @@ import sys
 input = sys.stdin.readline
 
 S = int(input())
-sum = 0                         # i부터 1씩 증가하는 i를 더하는 변수
+sum = 0                         # 1씩 증가하는 N를 더하는 변수
 N = 1
 
 while sum < S:                  # sum이 S보다 작을 때 반복
-  N += 1                        # i에 1증가
-  sum += N                      # i를 sum에 더해줌
+  N += 1                        # N에 1증가
+  sum += N                      # N를 sum에 더해줌
   
 print(N-1) 
 
@@ -26,9 +26,9 @@ import sys
 input = sys.stdin.readline
 
 S = int(input())
-i = 1
+N = 1
 
-while i*(i+1)/2 <= S: 
-  i += 1
+while N*(N+1)/2 <= S: 
+  N += 1
   
-print(i-1) 
+print(N-1) 

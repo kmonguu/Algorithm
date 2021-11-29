@@ -26,3 +26,18 @@ while S:                                                  # S 문자열 리스�
     arr.append(S.pop(0))                                  # S[0]을 arr[-1]에 넣어줌으로 S 문자열에서 연속하게 같은 숫자가 나온 것을 제외하여 담을 수 있다.
 
 print(len(arr)//2)                                        # 2를 나누어 뒤집기 횟수를 구할 수 있다.
+
+
+
+
+# 다른 방법 : pop(0)연산을 할 때 시간복잡도가 커지기 때문에 deque의 popleft연산을 해주는 게 좋음
+# pop(0)을 하는 방법 대신 for문을 사용하여 S 문자열 배열을 순회하여 연속된 같은 수를 제외하고 arr 배열에 넣어준다.
+
+S = list(input())
+
+arr = [S[0]]
+for i in range(1, len(S)):        # S 순회
+  if arr[-1] != S[i]:             # S의 마지막 요소랑 S[i]랑 다르면 즉, 구간이 바뀌는 지점이면
+    arr.append(S[i])              # append
+
+print(len(arr)//2)

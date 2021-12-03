@@ -11,6 +11,25 @@
 # 틀린 이유
 # 반례로 'UUUCCCCPPPCCC'가 들어오면 이대로 문자열에 담기는데, 순서를 유지하며 중복되는 문자를 삭제할 수 없었음
 
+# 코드
+S = input().split(' ')
+result = []
+
+for i in S:
+  arr = str(i[0])
+  
+  if arr.isupper() == True:
+    result.append(arr)
+
+if ''.join(result) == 'UCPC':
+  print('I love UCPC')
+
+else:
+  print('I hate UCPC')
+  
+  
+  
+  
 
 # 새로운 풀이
 # word 배열에 ['U', 'C', 'P', 'C']를 넣어두고 각각의 요소가 문자열 s에 있는지 확인하고, 있다면 arr 배열에 넣어주도록 했다.

@@ -50,3 +50,21 @@ if ''.join(arr) == 'UCPC':                # arr에 저장된 문자열이 'UCPC'
 
 else:
   print('I hate UCPC')                    # 아니라면 'I hate UCPC'를 
+
+  
+  
+  
+  
+# 다른 풀이
+s = input()
+
+result = ""
+for w in "UCPC":
+  index = s.find(w)
+  if index == -1:                         # s에서 w를 찾지 못하면 더 확인할 필요 없으므로 break
+    break
+  else:
+    result += w
+    s = s[index + 1:]
+
+print('I love UCPC' if result == 'UCPC' else 'I hate UCPC')

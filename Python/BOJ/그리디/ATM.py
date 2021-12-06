@@ -23,8 +23,20 @@ for idx in sum:
 print(result)
 
 
+# accumulate 모듈을 사용한 코드 길이 줄이기
+import sys
+input = sys.stdin.readline
 
-# 코드
+from itertools import accumulate
+
+n = int(input())
+arr = sorted(map(int, input().split()))
+
+print(sum(accumulate(arr)))
+
+
+
+# 다른 풀이
 import sys
 input = sys.stdin.readline
 
@@ -34,4 +46,20 @@ result = 0
 
 for idx in range(n):
   result += sum(arr[0:idx+1])
+print(result)
+
+
+
+# 다른 풀이
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+arr = sorted(map(int, input().split()))
+sum = 0
+result = 0
+
+for idx in arr:
+  sum += idx
+  result += sum
 print(result)

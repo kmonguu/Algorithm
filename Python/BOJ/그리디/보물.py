@@ -14,10 +14,37 @@ import sys
 input = sys.stdin.readline
 
 n = int(input())
-A = sorted(map(int, input().split()), reverse=True)     # A배열은 내림차순으로 정렬되도록 한다.
-B = sorted(map(int, input().split()))
+a = sorted(map(int, input().split()), reverse=True)     # a 배열은 내림차순으로 정렬되도록 한다.
+b = sorted(map(int, input().split()))                   # b 배열은 오른차순으로 정렬되도록 한다.
 
 result = 0
 for idx in range(n):
-  result += A[idx]*B[idx]
+  result += a[idx]*b[idx]
 print(result)
+
+
+
+
+# 다른 풀이
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+a = sorted(map(int, input().split()))                   # a 오름차순 정렬
+b = sorted(map(int, input().split()), reverse=True)     # b 내림차순 정렬
+
+print(sum([x * y for x, y in zip(a, b)]))               # zip 함수를 이용하여 a, b 리스트를 묶고 곱을 구한 후 sum 함수를 이용하여 전체 합을 구함
+
+
+
+
+
+# 다른 풀이
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+a = sorted(map(int, input().split()))
+b = sorted(map(int, input().split()), reverse=True)
+
+print(sum(map(lambda x, y: x * y, a, b)))               # map 함수와 lambda식을 이용하여 a, b 모든 요소의 곱을 구하고 sum 함수를 이용하여 전체 합을 구함

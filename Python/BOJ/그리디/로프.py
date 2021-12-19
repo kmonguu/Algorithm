@@ -27,3 +27,21 @@ for idx in range(n):
   result.append(w[idx]*(idx+1))       # w배열의 idx와 해당 요소의 자릿수를 곱하여 result 배열에 담는다.
 
 print(max(result))
+
+
+
+
+# 다른 풀이
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+weights = sorted([int(input()) for _ in range(n)])    # 리스트 컴프리헨션으로 입력 받고 오름차순 정렬
+
+result = 0
+for i in range(n):
+  weight = weights[i] * (n - i)                       # i번째 요소를 기준으로 최대 들 수 있는 중량 계산
+  if result < weight:                                 # result의 최대값 구함
+    result = weight
+
+print(result)

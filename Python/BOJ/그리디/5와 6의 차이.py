@@ -28,3 +28,13 @@ max_b = b.replace('5', '6')                # b에 입력된 값에서 모든 5�
 min_b = b.replace('6', '5')                # b에 입력된 값에서 모든 6을 5로 바꿔서 b의 최솟값을 저장 
   
 print(int(min_a) + int(min_b), int(max_a) + int(max_b))  
+
+
+
+# 코드 정리
+a, b = input().split()
+
+min = int(a.replace("6", "5")) + int(b.replace("6", "5"))
+max = int(a.replace("5", "6")) + int(b.replace("5", "6"))
+
+print(min, max)

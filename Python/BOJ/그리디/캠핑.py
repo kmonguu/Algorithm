@@ -37,3 +37,18 @@ while True:
       result += (V % P)
 
     print('Case %d: %d' %(count, result))
+
+    
+    
+# 다른 풀이
+import sys
+input = sys.stdin.readline
+
+index = 0
+while True:
+  L, P, V = map(int, input().split())
+  if L == 0:
+    break
+
+  index += 1
+  print("Case %d: %d" % (index, (L * (V // P) + min(L, (V % P)))))

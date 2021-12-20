@@ -23,3 +23,11 @@ if 'X' in s:                        # 보드판을 주어진 폴리오미노로 
   print(-1)                         # -1 출력       
 else: 
   print(s)
+
+  
+  
+  
+# 다른 풀이
+board = input().replace("XXXX", "AAAA").replace("XX", "BB")
+print(-1 if "X" in board else board)
+

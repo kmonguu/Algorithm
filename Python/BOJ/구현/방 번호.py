@@ -45,3 +45,20 @@ for i in room_num:
     set[int(i)] += 1
 
 print(math.ceil(max(set)))
+
+
+
+# 다른 풀이
+n = list(map(int, input()))
+
+count = [0] * 10
+for num in n:
+  if num == 9 or num == 6:
+    if count[6] < count[9]:         # 6과 9 중 작은 값을 +1
+      count[6] += 1
+    else:
+      count[9] += 1
+  else:
+    count[num] += 1
+
+print(max(count))

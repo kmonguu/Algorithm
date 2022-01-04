@@ -27,3 +27,18 @@ while True:
     break
   year += 1
   
+
+  
+# 다른 풀이 : e, s, m 에서 1씩 감소시켜서 연도를 구하고, e, s, m은 0 이하가 될 수 없으므로 0 이하가 될 때, 각 값의 최대값을 더하면서 구함
+e, s, m = map(int, input().split())
+
+year = 1
+while e != 1 or s != 1 or m != 1:
+  if e <= 0: e += 15; continue
+  if s <= 0: s += 28; continue
+  if m <= 0: m += 19; continue
+
+  e, s, m = e - 1, s - 1, m - 1
+  year += 1
+
+print(year)

@@ -34,7 +34,7 @@ def solution(participant, completion):
 # 다른 풀이
 # zip 함수를 이용한 방법
 # zip 함수는 짝이 맞으면 짝을 지어주고, 짝이 맞지 않으면 버림
-# for 문을 도는 동안 return이 안되니까 paricipant의 제일 마지막 갑이 완주하지 못한 경우를 대비하여 return participant[-1]을 해줌
+# for 문을 도는 동안 return이 안되니까 paricipant의 제일 마지막 값이 완주하지 못한 경우를 대비하여 return participant[-1]을 해줌
 
 def solution(participant, completion):
     participant.sort()

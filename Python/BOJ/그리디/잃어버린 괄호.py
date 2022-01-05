@@ -19,3 +19,15 @@ for i in arr[1:]:
     sum -= int(j)
 
 print(sum)
+
+
+
+
+# 다른 풀이
+expr = input().split("-")
+
+result = sum(map(int, expr[0].split("+")))
+for e in expr[1:]:
+  result -= sum(map(int, e.split("+")))
+
+print(result)

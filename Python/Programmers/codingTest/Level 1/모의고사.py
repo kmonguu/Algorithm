@@ -24,4 +24,47 @@ def solution(answers):
             answer.append(i+1)                                                # 가장 많은 문제를 맞힌 학생이 여러 명이면 모두 출력을 해야 하므로 i+1하여 학생 번호를 answer에 저장
           
     return answer
+
+
+
+# answer 배열에 답을 저장하는 다른 방법
+# max 함수를 if문에 사용하여 for문에서 계속 호출시키지 않고 먼저 호출하는 방법이 시간으로 효율적이다.
+
+# 1. max 함수를 미리 호출
+answer = []
+    max_score = max(check)
+    for i in range(3):
+        if check[i] == max_score:
+            answer.append(i + 1)
+            
+            
+            
+# 2. 
+answer = []
+    max_score = max(check)                                              # max 함수 호출하여 최대값을 max_score에 저장
+    if check[0] == max_score: answer.append(1)
+    if check[1] == max_score: answer.append(2)
+    if check[2] == max_score: answer.append(3)
     
+
+    
+ 
+
+# 다른 풀이 : enumerate 을 사용한 방법
+# enummerate는 리스트를 튜플로 만들어준다.
+
+def solution(answers):
+    students = [[1, 2, 3, 4, 5], [2, 1, 2, 3, 2, 4, 2, 5], [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]]
+    check = [0] * 3
+    for i in range(len(answers)):
+        if answers[i] == students[0][i % 5]: check[0] += 1
+        if answers[i] == students[1][i % 8]: check[1] += 1
+        if answers[i] == students[2][i % 10]: check[2] += 1
+    
+    answer = []
+    max_score = max(check)
+    for idx, score in enumerate(check):
+        if score == max_score:
+            answer.append(idx + 1)
+    
+    return answer

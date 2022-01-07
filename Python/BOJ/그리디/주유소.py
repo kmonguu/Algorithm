@@ -38,3 +38,28 @@ for i in range(city-1):
     sum += km[i]
 
 print(sum)
+
+
+
+
+# 다른 풀이 : zip 함수를 이용한 방법
+# 현재 문제에서 주어진 최대 가격이 10 ** 9이므로 min_price라는 변수의 초기값으로 1e9로 설정해준다.
+# zip 함수를 이용하여 기름값과 가격을 묶는다. 이때 마지막 도시의 주유소 가격은 필요없으므로 price[:-1]로 자른다.
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+road = list(map(int, input().split()))
+price = list(map(int, input().split()))
+
+result, min_price = 0, 1e9
+
+for r, p in zip(road, price[:-1]):
+  if p < min_price:                       # p가 min_price보다 작다면
+    min_price = p                         # min_price 값 갱신
+
+  result += (min_price * r) # 비용 계산
+
+print(result)
+

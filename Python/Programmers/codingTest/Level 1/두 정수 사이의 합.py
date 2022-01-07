@@ -22,3 +22,11 @@ def solution(a, b):
 # 코드
 def solution(a, b):
     return sum(range(min(a,b), max(a,b) + 1))
+
+
+
+# 다른 풀이 : 합 공식을 이용한 방법(n*(n+1)//2)
+# a와 b의 대소가 정해지지 않았으므로 abs 함수를 사용한다.
+
+def solution(a, b):
+    return (abs(a - b) + 1) * (a + b) // 2

@@ -31,8 +31,8 @@ def solution(n, lost, reserve):
 # 정답 풀이
 
 def solution(n, lost, reserve):
-    set_reserve = list(set(reserve) - set(lost))
-    set_lost = list(set(lost) - set(reserve))
+    set_reserve = sorted(list(set(reserve) - set(lost)))        
+    set_lost = sorted(list(set(lost) - set(reserve)))
     
     answer = n - len(set_lost)
     for i in set_reserve:
@@ -52,13 +52,13 @@ def solution(n, lost, reserve):
 # 코드 정리
 
 def solution(n, lost, reserve):
-    set_reserve = set(reserve) - set(lost)
-    set_lost = set(lost) - set(reserve)
+    set_reserve = sorted(set(reserve) - set(lost))  # lost와 reserve 배열의 순서가 오름차순으로 되어있지 않은 경우를 고려하여 set 한 후, sorted로 정렬해준다.
+    set_lost = sorted(set(lost) - set(reserve))
     
     for i in set_reserve:
-        if i-1 in set_lost:                     # set_reserve의 i에서 -1한 값이 set_lost에 있는 경우
-            set_lost.remove(i-1)                # 그 값을 set_lost에서 remove를 이용하여 제거한다.
-                                                # 체육복을 빌린 학생은 set_lost에서 제거해주어야 중복으로 빌려지지 않는다.
+        if i-1 in set_lost:                         # set_reserve의 i에서 -1한 값이 set_lost에 있는 경우
+            set_lost.remove(i-1)                    # 그 값을 set_lost에서 remove를 이용하여 제거한다.
+                                                    # 체육복을 빌린 학생은 set_lost에서 제거해주어야 중복으로 빌려지지 않는다.
         elif i+1 in set_lost:                   
             set_lost.remove(i+1)
             

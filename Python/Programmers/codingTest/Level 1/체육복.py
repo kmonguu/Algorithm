@@ -63,3 +63,22 @@ def solution(n, lost, reserve):
             set_lost.remove(i+1)
             
     return n - len(set_lost)
+
+
+
+
+
+# remove 대신 discard 메소드를 사용한 방법
+# discard는 해당 원소가 없어도 오류가 발생하지 않아서 remove보다 유연함
+
+def solution(n, lost, reserve):
+    set_reserve, set_lost = set(reserve) - set(lost), set(lost) - set(reserve)
+    
+    for r in sorted(set_reserve):
+        if (r - 1) in set_lost: 
+            set_lost.discard(r - 1)
+            
+        elif (r + 1) in set_lost: 
+            set_lost.discard(r + 1)
+    
+    return n - len(set_lost)

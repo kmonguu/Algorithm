@@ -28,3 +28,16 @@ if s == t:                              # s와 t가 같다면
   print(1)                              # 1 
 else: 
   print(0)
+  
+  
+  
+  
+# 다른 풀이
+s, t = input(), input()
+
+while len(t) != len(s):                 # t와 s의 길이가 같아질때까지 반복
+  if t[-1] == "A":                      # t의 마지막 요소가 A라면 t에서 마지막 요소 잘라냄
+    t = t[:-1]           
+  else: t = t[:-1][::-1]                # t의 마지막 요소가 B라면 t에서 마지막 요소 잘라내고 뒤집음
+
+print(1 if s == t else 0)               # 삼항연산자를 사용하여 print

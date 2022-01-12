@@ -12,3 +12,27 @@ def solution(numbers):
         answer.append(sum(i))             # 주어진 numbers 배열에서 2개씩 뽑아 그 합을 answer에 담는다.
 
     return sorted(list(set(answer)))      # 같은 중복된 수를 set으로 제거 후 오름차순으로 정렬하여 반환
+
+
+
+# 다른 풀이
+from itertools import combinations
+
+def solution(numbers):
+    return sorted(set(map(sum, combinations(numbers, 2))))
+
+
+
+# 다른 풀이 : dfs 탐색을 이용한 백트래킹 알고리즘 사용
+def solution(numbers):
+    def dfs(case, pick, idx, depth):
+        if depth == pick:
+            answer.add(case)
+            return
+        
+        for i in range(idx, len(numbers)):
+            dfs(case + numbers[i], pick, i + 1, depth + 1)
+    
+    answer = set()
+    dfs(0, 2, 0, 0)
+    return sorted(answer)

@@ -22,3 +22,49 @@ def solution(nums):
             if check:
                 cnt += 1
     return cnt
+
+
+
+# 다른 풀이 : 소수 판별하는 부분은 함수로 만들기
+
+from itertools import combinations
+
+def check(num):
+    for d in range(2, int(num ** 0.5) + 1):
+        if not (num % d):
+            return False
+    
+    return True
+
+def solution(nums):
+    answer = map(sum, combinations(nums, 3))
+    return len(list(filter(lambda x: check(x), answer)))
+
+
+
+
+# 다른 풀이 : dfs 탐색을 사용하여 백트래킹 알고리즘 적용한 방법
+
+def dfs(nums, case, pick, idx, depth):
+    global answer
+    
+    if depth == pick:
+        if check(case): answer += 1
+        return
+    
+    for i in range(idx, len(nums)):
+        dfs(nums, case + nums[i], pick, i + 1, depth + 1)
+    
+def check(num):
+    for d in range(2, int(num ** 0.5) + 1):
+        if not (num % d):
+            return False
+    
+    return True
+
+def solution(nums):
+    global answer
+    
+    answer = 0
+    dfs(nums, 0, 3, 0, 0)
+    return answer

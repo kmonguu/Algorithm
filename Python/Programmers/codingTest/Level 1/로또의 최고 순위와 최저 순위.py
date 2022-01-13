@@ -40,3 +40,14 @@ def solution(lottos, win_nums):
       if i in lottos:
           answer += 1
   return rank[cnt + answer],rank[answer]
+
+
+
+# 교집합을 사용한 방법
+
+def solution(lottos, win_nums):
+    rank = [6, 6, 5, 4, 3, 2, 1]
+    
+    answer = len(set(win_nums) & set(lottos))
+    return [rank[answer + lottos.count(0)], rank[answer]]
+

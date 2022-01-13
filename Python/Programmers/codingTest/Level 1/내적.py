@@ -16,3 +16,10 @@ def solution(a, b):
 
 def solution(a, b):
     return sum([x*y for x, y in zip(a,b)])
+
+
+
+# map 함수를 이용한 방법
+
+def solution(a, b):
+    return sum(map(lambda x, y: x * y, a, b))

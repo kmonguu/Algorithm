@@ -19,3 +19,9 @@ function solution(a, b) {
 function solution(a, b) {
     return a.reduce((acc, _, i) => acc += a[i] * b[i], 0);
 }
+
+
+
+// 함수 표현식을 이용한 방법
+
+const solution = (a, b) => a.reduce((answer, _, i) => answer + (a[i] * b[i]), 0);

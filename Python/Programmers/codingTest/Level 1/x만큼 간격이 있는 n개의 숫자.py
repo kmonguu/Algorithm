@@ -16,3 +16,12 @@ def solution(x, n):
 
 def solution(x, n):
     return [x * i for i in range(1, n+1)]
+
+
+
+
+# range 함수를 이용한 방법
+# 범위의 마지막 값을 x * (n+1)로 하여 양수와 음수일 때 처리되도록 하고, x가 0인 경우 [0] * n 을 반환
+
+def solution(x, n):
+    return list(range(x, x * (n + 1), x)) if x else [0] * n

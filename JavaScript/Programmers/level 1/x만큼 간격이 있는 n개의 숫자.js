@@ -11,8 +11,16 @@ function solution(x, n) {
 
 
 // 다른 사람 코드
-// 미리 배열을 n길이 만큼 생성해두고 map 함수를 이용하여 x를 제곱하여 배열에 채워넣습니다.
+// 미리 배열을 n길이 만큼 생성해두고 map 함수를 이용하여 x를 제곱하여 배열에 채워넣음.
 
 function solution(x, n) {
     return Array(n).fill(x).map((v, i) => (i + 1) * v)
+}
+
+
+// fill(0)으로 배열을 미리 0으로 채운 다음 map 메소드를 실행한 방법
+// Array()와 new Array()는 차이가 없으므로 배열 선언할 때 아무거나 사용해도 무방
+
+function solution(x, n) {
+    return new Array(n).fill(0).map((_, i) => (i + 1) * x);
 }

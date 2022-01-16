@@ -10,3 +10,12 @@ def solution(a, b):
     week = ["THU", "FRI", "SAT", "SUN", "MON", "TUE", "WED"]
     
     return week[(sum(month[0:a]) + b) % 7]
+
+
+# 모듈을 사용한 방법
+
+import datetime
+
+def solution(a, b):
+    days = [ "MON", "TUE", "WED", "THU", "FRI", "SAT", "SUN"]
+    return days[datetime.date(2016, a, b).weekday()]

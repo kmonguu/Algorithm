@@ -14,3 +14,22 @@ def solution(arr1, arr2):
         answer.append(list(x + y for x, y in zip(arr1[i], arr2[i])))
     
     return answer
+
+
+
+
+# zip 함수를 2번 사용하여 조금 더 단순하게 푸는 방법
+
+def solution(arr1, arr2):
+    return [[a + b for a, b in zip(a1, a2)] for a1, a2 in zip(arr1, arr2)]
+
+
+
+
+# 2중 for문으로 푸는 방법
+
+def solution(arr1, arr2):
+    for i in range(len(arr1)):
+        for j in range(len(arr1[0])):
+            arr1[i][j] += arr2[i][j]
+    return arr1

@@ -10,3 +10,11 @@ function solution(a, b) {
     
     return week[((month.slice(0, a).reduce((acc, i) => (acc+i))) + b) % 7];
 }
+
+
+
+// sum 함수를 만들어 푸는 방법
+
+function sum(arr){
+    return arr.reduce((acc, cur) => acc + cur, 0);
+}

@@ -14,9 +14,11 @@ arr[0] = arr[1] = False
 num = 0
 for i in range(2, n+1):
   for j in range(i, n+1, i):
+    
+    if arr[j]:
       arr[j] = False
       num += 1
-      
+
       if num == k:
         print(j) 
         break

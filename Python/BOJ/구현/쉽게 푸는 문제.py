@@ -19,13 +19,23 @@ print(sum(arr[a-1:b]))
 
 
 
+# 다른 사람 코드
+
+a, b = map(int, input().split())
+
+numbers = [1]
+while len(numbers) < b:
+  numbers.extend([numbers[-1] + 1] * (numbers[-1] + 1))
+
+print(sum(numbers[a - 1: b]))
+
 
 # 풀이
-# 구간의 범위가 1 ≤ a ≤ b ≤ 1,000 이므로 배열에 미리 수열을 만들어놓고 입력받은 구간만큼 합을 출력했다.
+# 구간의 범위가 1 ≤ a ≤ b ≤ 1,000 이므로 리스트의 크기가 1000이 넘어가는 순간인 1~45까지 배열에 미리 수열을 만들어놓고 입력받은 구간만큼 합을 출력했다.
 
 a, b = map(int, input().split())
 
 arr = []
-for i in range(1, 50):
+for i in range(46):
   arr += [i]*i
 print(sum(arr[a-1:b]))

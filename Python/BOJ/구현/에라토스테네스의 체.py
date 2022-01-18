@@ -22,3 +22,25 @@ for i in range(2, n+1):
       if num == k:
         print(j) 
         break
+
+        
+        
+        
+# 에라토스테네스의 체 부분을 함수로 구현하기
+
+def prime(n, k):
+  num = 0
+  for i in range(2, n+1):
+    for j in range(i, n+1, i):
+        if arr[j]:
+          arr[j] = False
+          num += 1
+
+          if num == k:
+            return j
+        
+n, k = map(int, input().split())
+arr = [True] * (n+1)
+arr[0] = arr[1] = False
+
+print(prime(n, k))

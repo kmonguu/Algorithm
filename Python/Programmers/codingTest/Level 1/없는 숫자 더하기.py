@@ -13,3 +13,10 @@ def solution(numbers):
 
 def solution(numbers):    
     return 45 - sum(numbers)
+
+
+
+# set을 이용해 차집합으로 푼 방법
+
+def solution(numbers):
+    return sum(set(range(0, 10)) - set(numbers))

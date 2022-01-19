@@ -11,3 +11,19 @@ process.stdin.on('data', data => {
     console.log('*'.repeat(a));
     }
 });
+
+
+
+
+// 구조 분해 할당 문법을 사용한 방법
+
+process.stdin.setEncoding('utf8');
+process.stdin.on('data', (data) => {
+    const [n, m] = data.split(" ");                 // 구조 분해 할당 문법 사용
+    
+    
+    const star = Array(+n).fill("*").join("");      // "+" 사용하여 숫자로 변환하고 Array(+n)으로 n만큼 빈 배열을 만든 뒤, 별표 배열 만들고 join으로 문자열로 변환
+    for (let i = 0; i < +m; i++) {
+        console.log(star);                          // m만큼 출력
+    }
+});

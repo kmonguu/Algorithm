@@ -17,3 +17,12 @@ function solution(arr1, arr2) {
     }
     return answer;
 }
+
+
+
+
+// 2차원 배열에서 연산을 하기 위해 map 메소드를 2번 사용한 방법
+
+function solution(arr1, arr2) {
+    return arr1.map((_, i) => arr1[i].map((_, j) => arr1[i][j] + arr2[i][j]));
+}

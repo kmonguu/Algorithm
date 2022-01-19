@@ -16,7 +16,23 @@ def solution(left, right):
             
     return sum(answer)
   
-  
+
+# 코드 수정
+# append를 한 번만 사용한 방법
+
+def solution(left, right):    
+    answer = []
+    for num in range(left, right+1):
+        cnt = 0
+        for prime in range(1, num+1):
+            if num % prime == 0:
+                cnt += 1
+        answer.append(num if cnt % 2 == 0 else -num)
+            
+    return sum(answer)   
+
+    
+    
   
 # 다른 사람 코드
 # 약수가 홀수개인 모든 정수는 제곱수인 것을 이용하여 left와 right 사이의 정수의 제곱근이 그의 int형과 같다면
@@ -24,3 +40,4 @@ def solution(left, right):
 
 def solution(left, right):
     return sum([-n if int(n ** 0.5) == n ** 0.5 else n for n in range(left, right+1)])
+

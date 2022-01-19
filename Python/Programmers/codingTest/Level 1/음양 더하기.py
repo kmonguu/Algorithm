@@ -12,3 +12,32 @@ def solution(absolutes, signs):
 
     return sum(arr)
   
+
+    
+    
+    
+# 코드 정리
+# append를 하나로 정리
+
+def solution(absolutes, signs):
+    arr = []
+    for x, y in zip(absolutes, signs):
+        arr.append(x if y else -x)
+
+    return sum(arr)
+
+
+
+
+# 다른 코드
+# 리스트 컴프리헨션을 이용한 풀이
+
+def solution(absolutes, signs):
+    return sum([absolutes[i] * (1 if signs[i] else -1) for i in range(len(absolutes))])
+
+
+
+# zip 함수를 이용한 리스트 컴프리헨션
+
+def solution(absolutes, signs):
+    return sum([a * (1 if s else -1) for a, s in zip(absolutes, signs)])

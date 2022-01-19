@@ -8,3 +8,10 @@
 def solution(x):
     a = sum([int(i) for i in str(x)])
     return True if x % a == 0 else False
+
+
+
+# 다른 사람 코드
+
+def solution(x):
+    return x % sum([int(i) for i in str(x)]) == 0

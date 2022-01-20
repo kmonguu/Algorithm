@@ -16,3 +16,31 @@ def solution(n):
         result += int(i) * 3 ** idx
         idx += 1
     return result
+
+
+
+
+# 코드 수정 : n진수에서 10진수로 변환할 때, int(n진수, n)으로 한번에 10진수로 바꿀 수 있다.
+
+def solution(n):
+    answer = ''
+    while 0 < n:
+        n, mod = divmod(n, 3)
+        answer += str(mod)
+    
+    return int(answer, 3)
+
+
+
+# 다른 사람 코드
+
+def convert(n, base):
+    result = ""
+    while n:
+        result += str(n % base)
+        n //= base
+    
+    return result
+
+def solution(n):
+    return int(convert(n, 3), 3)

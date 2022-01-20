@@ -15,3 +15,10 @@ def solution(x):
 
 def solution(x):
     return x % sum([int(i) for i in str(x)]) == 0
+
+
+
+# map, sum 함수를 이용해서 각 자리수의 합 구하는 방법, bool 함수를 이용해서 해당 값을 True, False로 변환
+
+def solution(x):
+    return bool(not x % sum(map(int, str(x))))

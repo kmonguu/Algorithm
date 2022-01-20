@@ -12,8 +12,24 @@ def solution(d, budget):
     if sum(d) <= budget:
         return len(d)
     else:
+        d.sort()
         while sum(answer) <= budget:
-            d.sort()
             answer.append(d.pop(0))
             
         return len(answer)-1
+
+    
+    
+# 다른 사람 코드
+# d를 정렬시키고 for문을 실행하여 budget에서 모든 price값을 빼주고 음수가 되면 break 해준다.
+
+def solution(d, budget):
+    answer = 0
+    for price in sorted(d):
+        budget -= price
+        if budget < 0:
+            break
+        
+        answer += 1
+    
+    return answer

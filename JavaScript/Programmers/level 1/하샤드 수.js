@@ -15,3 +15,23 @@ function solution(x) {
     
     return x % answer == 0;
 }
+
+
+// 정수를 문자열로 바꾸는 방법 : tring(x), x.toString(), x + "", `${x}` 
+// 문자열을 정수로 바꾸는 방법 : +x, Number(x), parseInt(x)
+
+// 다른 사람 코드
+
+function solution(x) {
+    return !(x % (x + "").split("").reduce((sum, cur) => sum + +cur, 0));
+}
+
+
+// spread 문법을 사용한 방법
+// x가 12345일 때, x + "" 는 "12345"가 되고,
+// ...(x + "")은 "1", "2", "3", "4", "5" 가 된다.
+// 현재 코드에서 나온  [...(x + "")]은 ["1", "2", "3", "4", "5"]가 된다.
+
+function solution(x) {
+    return !(x % [...(x + "")].reduce((sum, cur) => sum + +cur, 0));
+}

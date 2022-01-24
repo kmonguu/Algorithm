@@ -22,3 +22,19 @@ function solution(n, m) {
     }
     return answer;
 }
+
+
+
+
+// 다른 사람 코드
+// 유클리드 호제법을 이용한 반복문으로 처리
+
+function gcd(a, b) {                        // 유클리드 호제법을 사용하여 최대공약수를 구함
+    while (!!a) [a, b] = [b % a, a];        // !!의 의미는 a의 값을 boolean으로 만들겠다는 의미
+    return b;
+}
+
+function solution(n, m) {
+    const g = gcd(Math.min(n, m), Math.max(n, m));
+    return [g, n * m / g];
+}

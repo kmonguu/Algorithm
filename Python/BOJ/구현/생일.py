@@ -14,3 +14,20 @@ for _ in range(int(input())):
 
 birth.sort(key = lambda x : (x[3], x[2], x[1]), reverse =True)
 print(birth[0][0]+'\n'+birth[-1][0])
+
+
+
+# 다른 사람 코드
+# 딕셔너리를 이용한 방법
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+student = {}
+for _ in range(n):
+  name, d, m, y = input().split()
+  student[(int(y), int(m), int(d))] = name          # key는 (연, 월, 일), value는 이름
+
+keys = sorted(student)                              # key 오름차순 정렬 (첫번째 요소가 나이가 제일 많은 사람, 마지막 요소가 나이가 제일 적은 사람)
+print(student[keys[-1]] + "\n" + student[keys[0]])  

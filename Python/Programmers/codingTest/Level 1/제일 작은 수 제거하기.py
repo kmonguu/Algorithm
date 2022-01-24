@@ -13,3 +13,12 @@ def solution(arr):
         
     else:
         return [-1]
+
+    
+    
+# 다른 사람 코드    
+# 삼항연산자를 이용하여 조건문만 묶어서 처리
+
+def solution(arr):
+    arr.remove(min(arr))
+    return arr if arr else [-1]         # 삼항연산자 사용해서 return

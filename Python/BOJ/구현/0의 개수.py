@@ -16,3 +16,17 @@ for _ in range(int(input())):
       if '0' in j:
         cnt += 1
   print(cnt)
+
+  
+  
+
+# 다른 사람 풀이
+# n, m 사이의 수를 모두 str로 바꾸고 count를 이용하여 0의 개수를 셈
+
+import sys
+input = sys.stdin.readline
+
+for _ in range(int(input()):
+  n, m = map(int, input().split())
+  
+  print("".join(map(str, range(n, m + 1))).count("0"))    # n, m 사이에 있는 모든 숫자를 str로 변환 후 문자열로 변환하고 이후 "0"의 개수를 셈

@@ -24,3 +24,45 @@ def solution(num):
             cnt += 1
             
     return cnt if cnt != 500 else -1
+
+
+# 코드 수정
+
+def solution(num):
+    cnt = 0
+    while num != 1:                   # while문 조건을 num != 1로 두면 num이 1일 때는 걸러줌으로 따로 처리해주지 않아도 됨
+        if cnt == 500: return -1      # cnt == 500인 경우도 바로 return -1로 처리해두면 마지막에 따로 처리를 안해도 됨
+        if num %2 == 0: num //= 2
+        else: num = num * 3 + 1
+        cnt += 1
+            
+    return cnt
+
+
+
+# 다른 사람 코드
+# 삼항연산자로 푼 방법
+
+def solution(n):
+    answer = 0
+    while n > 1:
+        if answer == 500: return -1
+        n = n // 2 if (n % 2) == 0 else (n * 3) + 1
+        answer += 1
+        
+    return answer
+
+
+
+
+# for문을 이용하여 500번만 반복하도록 한 방법, 만약 for문을 도는 동안 return 되지 않았다면 작업이 500 이상 한다는 의미이므로 -1을 반환
+
+def solution(n):
+    answer = 0
+    for _ in range(500):
+        if n == 1: return answer
+        n = n // 2 if (n % 2) == 0 else (n * 3) + 1
+        answer += 1
+        
+    return -1
+

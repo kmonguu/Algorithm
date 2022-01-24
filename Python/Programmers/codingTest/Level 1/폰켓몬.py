@@ -10,3 +10,10 @@ def solution(nums):
     nums_set = len(set(nums))
     return nums_set if nums_set < len(nums)/2 else len(nums)/2
         
+
+    
+# 다른 사람 코드
+# 결국 len(nums) // 2 와 len(set(nums)) 중 최솟값을 반환하는 것이므로 아래처럼 풀 수 있다.
+
+def solution(nums):
+    return min(len(nums)//2, len(set(nums)))    # min 함수를 이용하여 작은 값 반환

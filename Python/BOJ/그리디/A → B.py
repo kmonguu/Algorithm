@@ -27,3 +27,19 @@ if a == b:
   print(cnt)
 else:
   print(-1)
+
+  
+  
+# 다른 사람 코드
+
+a, b = map(int, input().split())
+
+cnt = 1
+while a < b:
+  if b % 2 == 0: b = b//2
+  elif b % 10 == 1: b = b // 10
+  else: break
+  
+  cnt += 1
+
+print(cnt if a == b else -1)

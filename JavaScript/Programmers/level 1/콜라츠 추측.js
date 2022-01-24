@@ -24,3 +24,17 @@ function solution(num) {
     }
     return num == 1 && answer != 500 ? answer : -1;
 }
+
+
+
+// 다른 사람 코드
+
+function solution(n) {
+    let answer = 0;
+    while (n > 1) {
+        if (answer === 500) return -1;
+        n = !(n % 2) ? n / 2 : (n * 3) + 1;
+        answer++;
+    }
+    return answer;
+}

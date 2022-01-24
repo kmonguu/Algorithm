@@ -10,3 +10,20 @@ if t%10 == 0:
   print((t // 300), ((t%300) // 60), ((t%300%60) // 10))
 else:
   print(-1)
+
+  
+  
+  
+# 다른 사람 코드
+
+t = int(input())
+
+if t % 10 == 0:
+  times = [300, 60, 10]
+  answer = [0, 0, 0]
+  for i in range(3):
+    answer[i] = t // times[i]
+    t %= times[i]
+  print(*answer)
+else:
+  print(-1)

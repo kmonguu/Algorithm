@@ -8,3 +8,11 @@
 def solution(s):
     idx = len(s) // 2
     return s[idx-1:idx+1] if len(s)%2 == 0 else s[idx]
+
+
+
+# 다른 사람 코드
+# if 조건문 없이 짝수, 홀수인 경우 처리
+
+def solution(s):
+    return s[(len(s) - 1) // 2 : len(s) // 2 + 1]

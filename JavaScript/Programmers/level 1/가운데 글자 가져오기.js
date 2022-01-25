@@ -9,3 +9,10 @@ function solution(s) {
     let idx = parseInt(s.length/2)
     return (s.length) % 2 == 0 ? s.slice(idx-1,idx+1) : s[idx];
 }
+
+
+// 다른 사람 코드
+
+function solution(s) {
+    return s.slice((s.length - 1) / 2, s.length / 2 + 1);
+}

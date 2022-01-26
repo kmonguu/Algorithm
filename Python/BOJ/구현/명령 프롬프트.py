@@ -23,3 +23,20 @@ for _ in range(n-1):
       word[i] = '?'
 
 print(''.join(word))
+
+
+# 다른 사람 코드
+
+import sys
+input = sys.stdin.readline
+
+n = int(input())
+files = [input().strip() for _ in range(n)]
+
+answer = list(files[0])
+for i in range(1, n):
+  for j in range(len(answer)):
+    if answer[j] != "?" and answer[j] != files[i][j]:
+      answer[j] = "?"
+
+print("".join(answer))

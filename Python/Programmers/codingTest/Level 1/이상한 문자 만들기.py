@@ -21,3 +21,20 @@ def solution(s):
         answer.append(word)
 
     return ' '.join(answer)
+
+
+
+# 다른 사람 풀이
+# for문을 사용하여 리스트로 변환된 s의 요소를 순환하여 공백을 만난다면 cnt 초기화, 공백이 아니라면 cnt에 맞춰 대소문자 변환을 해준다.
+def solution(s):
+    answer = list(s)
+    cnt = 0
+    for i in range(len(answer)):
+        if answer[i] == " ":
+            cnt = 0
+            continue
+        
+        answer[i] = answer[i].upper() if cnt % 2 == 0 else answer[i].lower()
+        cnt += 1
+        
+    return "".join(answer)

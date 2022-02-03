@@ -8,3 +8,18 @@
 function solution(n) {
     return [...n.toString()].reverse().map(x => parseInt(x));
 }
+
+
+
+// 다른 사람 풀이
+// 몫, 나머지를 이용하여 숫자로만 푸는 방법
+
+function solution(n) {
+    const answer = [];
+    while (n > 0) {
+        answer.push(n % 10);
+        n = parseInt(n / 10);
+    }
+    
+    return answer;
+}

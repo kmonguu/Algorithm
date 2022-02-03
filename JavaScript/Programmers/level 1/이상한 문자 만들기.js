@@ -19,3 +19,17 @@ function solution(s) {
     }
     return answer.join(' ');
 }
+
+
+
+// 다른 사람 풀이
+// 변수를 따로 선언하지 않는 함수형 프로그래밍 방법
+
+function solution(s) {
+    return s
+        .split(" ")
+        .map((w) => [...w]
+             .map((a, i) => i % 2 === 0 ? a.toUpperCase() : a.toLowerCase())
+             .join(""))
+        .join(" ");
+}

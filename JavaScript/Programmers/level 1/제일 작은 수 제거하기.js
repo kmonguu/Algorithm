@@ -12,3 +12,14 @@ function solution(arr) {
     return arr
    
 }
+
+
+
+
+// 다른 사람 풀이
+// !! 연산자를 사용한 방법
+
+function solution(arr) {
+    arr.splice(arr.indexOf(Math.min(...arr)), 1);
+    return !!arr.length ? arr : [-1];
+}

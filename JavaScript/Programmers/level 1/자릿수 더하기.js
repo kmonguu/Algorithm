@@ -19,3 +19,10 @@ function solution(n)
 {
     return [...n.toString()].reduce((x, y) => (x + parseInt(y)), 0);
 }
+
+
+
+// 문자를 숫자로 바꿀 경우 *1을 해도 변경이 가능
+function solution(n) {
+    return [...(n + "")].reduce((sum, current) => sum + current * 1, 0);
+}

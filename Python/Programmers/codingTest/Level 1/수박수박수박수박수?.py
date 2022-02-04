@@ -15,3 +15,11 @@ def solution(n):
             answer += arr[1]
     return answer
         
+
+    
+# 다른 사람 풀이
+# 문자열 곱하기를 활용한 방법
+# n이 홀수인 경우를 (n+1)//2로 처리
+
+def solution(n):
+    return ("수박" * ((n + 1) // 2))[:n]

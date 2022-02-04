@@ -11,3 +11,21 @@ function solution(n) {
     }
     return answer;
 }
+
+
+
+
+
+// 다른 사람 풀이
+
+function solution(n) {
+    let answer = 0;
+    for (let d = 1; d <= (n ** 0.5); d++) {
+        if (n % d === 0) {
+            answer += (d + (d === n / d ? 0 : n / d))
+            
+        }
+    }
+    
+    return answer;
+}

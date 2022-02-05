@@ -6,3 +6,7 @@
 function solution(n) {
     return "수박".repeat(n).slice(0,n);
 }
+
+
+
+// 다른 사람 풀이

@@ -11,3 +11,16 @@ def solution(n):
             return x
         else:
             x += 1
+
+            
+            
+            
+# 다른 사람 풀이
+# 나머지가 1이 되는 수는 (n-1)의 제곱근보다 클 수 없음을 이용
+
+def solution(n):
+    for x in range(2, int((n - 1) ** 0.5) + 1):
+        if (n - 1) % x == 0:
+            return x
+    
+    return n - 1

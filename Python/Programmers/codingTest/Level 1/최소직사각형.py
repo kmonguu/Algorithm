@@ -12,3 +12,9 @@ def solution(sizes):
     sizes = [sorted(size) for size in sizes]
     answer = list(map(list, zip(*sizes)))
     return max(answer[0])*max(answer[1])
+
+
+
+# 다른 사람 코드
+def solution(sizes):
+    return max([max(size) for size in sizes]) * max([min(size) for size in sizes])

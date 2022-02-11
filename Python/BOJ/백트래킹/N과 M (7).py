@@ -7,14 +7,14 @@ n, m = map(int, input().split())
 arr = sorted(map(int, input().split()))
 answer = []
 
-def n_and_m (start):
+def n_and_m ():
   if len(answer) == m:
     print(' '.join(map(str, answer)))  
     return
 
-  for idx in range(start, n):
+  for idx in range( n):
     answer.append(arr[idx])
-    n_and_m(start)
+    n_and_m()
     answer.pop()
 
-n_and_m(0)
+n_and_m()

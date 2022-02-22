@@ -10,7 +10,6 @@ n, m = map(int, input().split())
 arr = sorted(map(int, input().split()))
 
 answer = []
-visited = [False]*n
 
 def n_and_m(start):
   if len(answer) == m:
@@ -19,12 +18,34 @@ def n_and_m(start):
 
   compare = 0
   for idx in range(start, n):
-    if not visited[idx] and compare != arr[idx]:
-      visited[idx] = True
+    if compare != arr[idx]:
       compare = arr[idx]
       answer.append(arr[idx])
       n_and_m(idx+1)
-      visited[idx] = False
       answer.pop()
 
 n_and_m(0)
+
+
+# 딕셔너리를 이용한 풀이
+
+import sys
+input = sys.stdin.readline
+
+n, m = map(int, input().split())
+numbers = sorted(map(int, input().split()))
+
+def dfs(case, idx):
+  if len(case) == m:
+    result = tuple(case)
+    if result not in check:
+      check[result] = True
+      print(*case)
+    
+    return
+
+  for i in range(idx, n):
+    dfs(case + [numbers[i]], i + 1)
+
+check = {}
+dfs([], 0)

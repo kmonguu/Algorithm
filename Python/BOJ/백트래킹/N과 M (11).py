@@ -23,3 +23,28 @@ def n_and_m():
       answer.pop()
 
 n_and_m()
+
+
+
+# 딕셔너리를 이용한 방법
+
+import sys
+input = sys.stdin.readline
+
+n, m = map(int, input().split())
+numbers = sorted(map(int, input().split()))
+
+def dfs(case):
+  if len(case) == m:
+    result = tuple(case)
+    if result not in check:
+      check[result] = True
+      print(*case)
+    
+    return
+
+  for i in range(n):
+    dfs(case + [numbers[i]])
+
+check = {}
+dfs([])

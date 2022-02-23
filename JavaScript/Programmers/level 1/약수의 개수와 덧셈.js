@@ -13,3 +13,13 @@ function solution(left, right) {
     }
     return answer.reduce((a, b) => a + b, 0);
 }
+
+
+
+// 다른 사람 풀이
+
+function solution(left, right) {
+    return Array(right - left + 1)
+        .fill(0)
+        .reduce((answer, _, idx) => answer + (Number.isInteger((idx + left) ** 0.5) ? -(idx + left) : (idx + left)), 0);
+}

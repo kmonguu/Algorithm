@@ -17,3 +17,22 @@ function solution(s, n){
         : String.fromCharCode(answer.charCodeAt() + n)
     }).join("");
 }
+
+
+
+// 다른 사람 풀이
+// 전개문법을 사용하여 문자열 s를 배열로 만들어준 뒤, reduce를 사용
+
+function solution(s, n) {
+    return [...s].reduce((answer, alpha) => {
+        if (alpha === " ") {
+            return answer + alpha;
+        } else {
+            if (alpha === alpha.toUpperCase()) {
+                return answer + String.fromCharCode((alpha.charCodeAt() + n - 65) % 26 + 65);
+            } else if (alpha === alpha.toLowerCase()) {
+                return answer + String.fromCharCode((alpha.charCodeAt() + n - 97) % 26 + 97);
+            }
+        }
+    }, "");
+}

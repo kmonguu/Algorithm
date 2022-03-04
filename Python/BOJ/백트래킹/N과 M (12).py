@@ -26,7 +26,6 @@ n_and_m(0)
 
 
 # 딕셔너리를 이용한 방법
-
 import sys
 input = sys.stdin.readline
 

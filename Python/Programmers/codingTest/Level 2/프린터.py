@@ -18,8 +18,7 @@ def solution(arr, location):
     while arr:
         if arr[0] == max(arr):
             answer.append(index.popleft())
-            arr.popleft()
-            
+            arr.popleft()    
         else:
             arr.append(arr.popleft())
             index.append(index.popleft())

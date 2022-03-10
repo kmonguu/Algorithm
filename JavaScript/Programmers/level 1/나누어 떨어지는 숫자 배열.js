@@ -13,3 +13,12 @@ function solution(arr, divisor) {
     }
     return answer.length ? answer.sort((a, b) => a - b) : [-1];  
 }
+
+
+// 다른 사람 풀이
+// 자바스크립트 배열 메소드를 이용한 풀이
+
+function solution(arr, divisor) {
+    const answer = arr.filter((el) => !(el % divisor));
+    return answer.length ? answer.sort((a, b) => a - b) : [-1];
+}

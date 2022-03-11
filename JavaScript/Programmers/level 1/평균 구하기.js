@@ -15,12 +15,10 @@ function solution(arr) {
 
 
 // 다른 풀이 : reduce 메소드 이용하기
-
 function solution(arr) {
     return arr.reduce((sum, current) => sum + current, 0) / arr.length;
 }
 
 
 // 다른 풀이 : 함수 표현식
-
 const solution = (arr) => arr.reduce((total, num) => total + num, 0) / arr.length

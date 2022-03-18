@@ -10,8 +10,6 @@ function solution(a, b) {
     return answer;
 }
 
-
-
 // 다른 사람 풀이 : 두 수 사이의 합을 구하는 공식 사용
 
 function solution(a, b) {

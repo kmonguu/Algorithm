@@ -16,4 +16,22 @@ def solution(arr):
         if cnt == len(arr):
             break
     return lcm
-                
+         
+    
+# 다른 사람 풀이
+
+def gcd(a, b): # 유클리드 호제법을 이용하여 최대공약수 구현
+    while b > 0:
+        a, b = b, a % b
+    
+    return a
+
+def lcm(a, b): # 최소공배수
+    return a * b // gcd(a, b)
+
+def solution(arr):
+    while len(arr) > 1:
+        a, b = arr.pop(), arr.pop()
+        arr.append(lcm(max(a, b), min(a, b)))
+        
+    return arr[0]

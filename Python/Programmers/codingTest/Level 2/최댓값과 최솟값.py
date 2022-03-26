@@ -6,3 +6,11 @@
 def solution(s):
     answer = sorted(map(int, s.split(' ')))
     return str(answer[0])+' '+str(answer[-1])
+
+
+# 다른 사람 풀이
+# 람다식을 이용한 방법
+
+def solution(s):
+    answer = sorted(s.split(" "), key=lambda x: int(x))
+    return " ".join([answer[0], answer[-1]])

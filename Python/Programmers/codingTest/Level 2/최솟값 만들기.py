@@ -10,3 +10,9 @@ def solution(A,B):
     B = sorted(B, reverse=True)
 
     return sum([a * b for a, b in zip(A, B)])
+
+
+# 다른 사람 풀이
+
+def solution(a, b):
+    return sum(map(lambda x: x[0] * x[1], zip(sorted(a), sorted(b, reverse=True))))

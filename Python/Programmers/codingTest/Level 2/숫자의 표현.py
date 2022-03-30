@@ -14,3 +14,21 @@ def solution(n):
                 answer += 1
 
     return answer
+
+
+# 내가 푼 코드
+# 틀린 부분 : 마지막 조건문에서 sum이 n보다 커질 경우를 고려하지 못하여 sum == n일 때 answer에 +1을 하고 멈추는 것이 아닌
+#             j의 주어진 범위까지 다 돌기 때문에 효율성에서 문제가 생겼음
+
+def solution(n):
+    answer = 0
+    for i in range(1, n+1):
+        sum = 0
+        for j in range(i, n+1):
+            sum += j
+            if(sum == n):
+                answer += 1
+            elif (sum > n):
+                break
+
+    return answer

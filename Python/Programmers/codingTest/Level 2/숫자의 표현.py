@@ -32,3 +32,21 @@ def solution(n):
                 break
 
     return answer
+
+# 다른 사람 코드
+# while문을 한 번 사용한 방법
+
+def solution(n):
+    answer, tmp, i, j = 1, 0, 1, 0
+    while i < n // 2 + 1:
+        tmp += (i + j)
+        j += 1
+        if tmp >= n:
+            if tmp == n:
+                answer += 1
+
+            i += 1
+            tmp, j = 0, 0
+
+    return answer
+

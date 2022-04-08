@@ -4,11 +4,13 @@
 
 
 # 내가 푼 코드
+# j가 방문했던 열을 연속해서 밟는 것을 막기 위해 인덱스 슬라이싱을 사용하고 j를 기준으로 앞, 뒤 값 중 가장 큰 값을 구함
+# 구한 값들의 합을 반환
 
 def solution(land):
     for i in range(1, len(land)):
         for j in range(len(land[0]): 
-             land[i][j] += max(land[i-1][:j] + land[i-1][j+1:]
+             land[i][j] += max(land[i-1][:j] + land[i-1][j+1:])
                                
     return max(land[len(land)-1])
             

@@ -19,7 +19,6 @@ def solution(n):
 # 내가 푼 코드
 # 틀린 부분 : 마지막 조건문에서 sum이 n보다 커질 경우를 고려하지 못하여 sum == n일 때 answer에 +1을 하고 멈추는 것이 아닌
 #             j의 주어진 범위까지 다 돌기 때문에 효율성에서 문제가 생겼음
-
 def solution(n):
     answer = 0
     for i in range(1, n+1):
@@ -35,7 +34,6 @@ def solution(n):
 
 # 다른 사람 코드
 # while문을 한 번 사용한 방법
-
 def solution(n):
     answer, tmp, i, j = 1, 0, 1, 0
     while i < n // 2 + 1:

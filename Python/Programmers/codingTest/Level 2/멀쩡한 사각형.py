@@ -19,3 +19,4 @@ def solution(w,h):
     return (w*h) - (gcd(w, h)**2)
   
   
+# 정답 코드

@@ -9,3 +9,8 @@
 
 # 내가 푼 코드
 # 파이썬의 내장함수 bin을 활용하여 매개변수 n의 이진수를 구하여 '1'의 갯수를 센다.
+
+def solution(n):
+    for num in range(n+1, 1000001):
+        if(bin(n)[2:].count('1') == bin(num)[2:].count('1')):
+            return num

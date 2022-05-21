@@ -26,3 +26,6 @@ def solution(n):
         n = (n-1) // 3
         
     return result[::-1]
+
+
+# 다른 사람 풀이

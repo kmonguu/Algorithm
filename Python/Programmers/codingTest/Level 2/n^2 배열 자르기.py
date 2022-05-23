@@ -6,4 +6,14 @@
 # 4. 1행, 2행, ..., n행을 잘라내어 모두 이어붙인 새로운 1차원 배열을 만듭니다.
 # 5. 새로운 1차원 배열을 arr이라 할 때, arr[left], arr[left+1], ..., arr[right]만 남기고 나머지는 지웁니다.
 
-# 내가 푼 코드
+# 시간 초과 코드
+
+def solution(n, left, right):
+    arr = [[0]*n for i in range(n)]
+      
+    for idx in range(1, n+1):
+        for j in range(1, idx+1):
+            
+            arr[idx-1][j-1] = arr[j-1][idx-1] = idx
+              
+    return sum(arr, [])[left: right+1]

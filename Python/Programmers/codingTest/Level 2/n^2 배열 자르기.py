@@ -17,3 +17,24 @@ def solution(n, left, right):
             arr[idx-1][j-1] = arr[j-1][idx-1] = idx
               
     return sum(arr, [])[left: right+1]
+
+
+# 내가 푼 정답 코드
+# 구하고자하는 배열은 범위를 [left:right+1]로 하기 때문에 2차원 배열을 모두 구하지 않고 풀 수 있다.
+
+# n이 3일 때,
+# [1][1] = 1  [1][2] = 2  [1][3] = 3
+# [2][1] = 2  [2][2] = 2  [2][3] = 3
+# [3][1] = 3  [3][2] = 3  [3][3] = 3
+
+# 위와 같은 2차원 배열이 나오는 것을 볼 수 있는데, 여기서 행과 열 중 큰 수가 그 배열의 값이 되는 것을 확인할 수 있다.
+
+def solution(n, left, right):
+    answer = []
+    for idx in range(left, right+1):
+        a = (idx // n) + 1
+        b = (idx % n) + 1 
+        
+        answer.append(max(a, b))
+
+    return answer

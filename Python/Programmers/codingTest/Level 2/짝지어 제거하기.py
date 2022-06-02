@@ -5,3 +5,27 @@
 
 
 # 내가 푼 코드
+# 스택을 이용하여 check라는 빈 배열을 두고, s 배열에 저장된 문자를 하나씩 check로 옮기며 비교하여 삭제하는 식으로 품
+# check       s
+# []          [baabaa]    -> check가 빈배열이므로 s를 pop하여 check에 담음
+# [a]         [baaba]     -> check[-1]과 s[-1]을 비교하여 같다면 삭제
+# []          [baab]      -> check가 빈배열이므로 s를 pop하여 check에 담음
+# [b]         [baa]       -> check[-1]과 s[-1]을 비교하여 같지 않다면 s를 pop하여 check에 담아줌
+# [ba]        [ba]        -> check[-1]과 s[-1]을 비교하여 같다면 삭제하는 것을 반복하면 짝지어 제거하기가 성공적으로 끝남, 1을 반환한다.
+
+
+def solution(s):
+    answer = 0
+    s = list(s)
+    check = []
+    while s:
+        if len(check) == 0:
+            check.append(s.pop())
+        else:
+            if check[-1] == s[-1]:
+                check.pop()
+                s.pop()
+            else:
+                check.append(s.pop())
+
+    return 0 if check else 1

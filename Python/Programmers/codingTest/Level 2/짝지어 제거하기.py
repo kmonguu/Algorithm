@@ -15,12 +15,13 @@
 
 
 def solution(s):
-    answer = 0
     s = list(s)
     check = []
+    
     while s:
         if len(check) == 0:
             check.append(s.pop())
+            
         else:
             if check[-1] == s[-1]:
                 check.pop()

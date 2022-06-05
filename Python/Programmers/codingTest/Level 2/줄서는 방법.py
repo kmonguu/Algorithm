@@ -12,6 +12,8 @@
 # [3, 2, 1]
 
 
+# 시간초과 코드 : itertools 라이브러리 사용한 방법
+
 from itertools import permutations
 
 def solution(n, k):

@@ -12,7 +12,7 @@
 # [3, 2, 1]
 
 
-# 시간초과 코드 : itertools 라이브러리 사용한 방법
+# 시간초과 코드(1) : itertools 라이브러리 사용한 방법
 
 from itertools import permutations
 
@@ -29,3 +29,28 @@ def solution(n, k):
         
     return arr[-1]
         
+# 시간초과 코드(2) : 재귀를 활용한 dfs로 접근한 방법
+
+def dfs(n, k, cases, visited):
+    global count, answer
+    if count == k: return
+    
+    if len(cases) == n:
+        count += 1
+        if count == k: answer = cases[:]
+        return
+
+    for num in range(1, n+1):
+        if not visited[num]:
+            visited[num] = True
+            dfs(n, k, cases + [num], visited)
+            visited[num] = False
+    
+    return answer
+
+def solution(n, k):
+    global count, answer
+    count = 0
+    answer = []
+    visited = [False] * (n + 1)
+    return dfs(n, k, [], visited)

@@ -30,6 +30,7 @@ def solution(n, k):
     return arr[-1]
         
 # 시간초과 코드(2) : 재귀를 활용한 dfs로 접근한 방법
+# 알게된 점 : 파이썬에서의 배열 복사 방법
 
 def dfs(n, k, cases, visited):
     global count, answer
@@ -37,7 +38,7 @@ def dfs(n, k, cases, visited):
     
     if len(cases) == n:
         count += 1
-        if count == k: answer = cases[:]
+        if count == k: answer = cases[:]        # cases 배열을 answer에 복사해주기 위해 cases[:]를 
         return
 
     for num in range(1, n+1):

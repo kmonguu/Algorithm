@@ -19,3 +19,13 @@ def solution(phone_book):
                 answer = False
     return answer
     
+
+ # 맞은 코드 : 파이썬 내장함수 startswith을 사용 (해당 문자열이 특정 문자열로 시작하는지 확인시켜주는 함수)
+
+def solution(phone_book):
+    phone_book.sort()
+    for idx in range(len(phone_book)-1):
+        if phone_book[idx+1].startswith(phone_book[idx]):  # 다음 인덱스의 값이 현재 인덱스 값으로 시작한다면 False를 반환
+            return False
+        
+    return True

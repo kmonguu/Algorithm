@@ -2,7 +2,11 @@
 
 # 내가 푼 코드
 # progresses와 speeds를 deque로 만들고,
-# 각 작업의 진도에 개발 속도를 더해가면서 해당 작업이 100%가 되었을 때 큐에서 pop하면서 같이 배포할 수 있는 기능의 수를 
+# 각 작업의 진도에 개발 속도를 더해가면서 해당 작업이 100%가 되었을 때 큐에서 pop하면서 같이 배포할 수 있는 기능의 수를 구해줌
+
+# deque를 사용하면서 발생한 typeerror: object of type set is not json serializable
+# json 모듈이 해당 오브젝트를 제대로 인식하지 못하는 문제로, progresses와 speeds를 deque로 정의하는 과정에
+# progresses = deque(progresses)를 list로 타입을 정의해주어 progresses = deque(list(progresses))로 해결할 수 있었다.
 
 from collections import deque
 def solution(progresses, speeds):

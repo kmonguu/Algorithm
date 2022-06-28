@@ -12,7 +12,7 @@
 # "muzi"  	     ["frodo", "neo"]	   ["frodo", "neo"]
 # "frodo"	     ["neo"]	           ["neo"]
 # "apeach"	     ["muzi", "frodo"]	   ["frodo"]
-# "neo"	           없음	                없음
+# "neo"	                 없음	                없음
 
 # 따라서 "muzi"는 처리 결과 메일을 2회, "frodo"와 "apeach"는 각각 처리 결과 메일을 1회 받게 됩니다.
 

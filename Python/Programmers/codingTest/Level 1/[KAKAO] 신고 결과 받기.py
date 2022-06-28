@@ -8,11 +8,11 @@
 # 다음은 전체 유저 목록이 ["muzi", "frodo", "apeach", "neo"]이고, k = 2(즉, 2번 이상 신고당하면 이용 정지)인 경우의 예시입니다.
 
 # 신고 예시
-# 유저 ID	     유저가 신고한 ID	      정지된 ID
-# "muzi"  	["frodo", "neo"]	["frodo", "neo"]
-# "frodo"	  ["neo"]	 ["neo"]
-# "apeach"	["muzi", "frodo"]	  ["frodo"]
-# "neo"	          없음	            없음
+# 유저 ID	        유저가 신고한 ID	        정지된 ID
+# "muzi"  	     ["frodo", "neo"]	   ["frodo", "neo"]
+# "frodo"	     ["neo"]	           ["neo"]
+# "apeach"	     ["muzi", "frodo"]	   ["frodo"]
+# "neo"	          없음	               없음
 
 # 따라서 "muzi"는 처리 결과 메일을 2회, "frodo"와 "apeach"는 각각 처리 결과 메일을 1회 받게 됩니다.
 

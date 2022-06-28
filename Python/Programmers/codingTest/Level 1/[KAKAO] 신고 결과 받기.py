@@ -20,3 +20,33 @@
 # 각 이용자가 신고한 이용자의 ID 정보가 담긴 문자열 배열 report, 
 # 정지 기준이 되는 신고 횟수 k가 매개변수로 주어질 때, 각 유저별로 처리 결과 메일을 받은 횟수를 배열에 담아 반환
 
+# 인터넷을 참고하여 푼 코드
+# collections모듈의 defaultdict을 활용하여 
+# 신고자의 id와 신고 대상이 받은 신고 횟수를 저장하기 위해 user, report_count를 딕셔너리로 선언
+
+from collections import defaultdict
+
+def solution(id_list, report, k):
+    answer = []
+    reports = list(set(report))
+    user = defaultdict(set)
+    report_count = defaultdict(int)
+
+
+    for report in reports:
+        reporter, target = report.split() 
+
+        user[reporter].add(target)          # 신고자가 신고한 대상을 저장 : defaultdict(<class 'set'>, {'muzi': {'frodo', 'neo'}, 'frodo': {'neo'}, 'apeach': {'frodo', 'muzi'}})
+        report_count[target] += 1           # 신고 당한 대상의 신고 받은 횟수 저장 : defaultdict(<class 'int'>, {'frodo': 2, 'neo': 2, 'muzi': 1}) 
+
+        
+    for id in id_list:
+        result = 0
+
+        for u in user[id]:
+            if report_count[u] >= k:        # 신고 대상의 신고 받은 횟수가 k번이 넘는다면
+                result += 1                 # 신고자가 받을 메일 횟수를 증가시킴
+
+        answer.append(result)
+    return answer
+  

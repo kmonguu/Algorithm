@@ -43,3 +43,6 @@ def dfs(n):
 dfs(r)
 for cnt in range(1, n+1):
   print(visited[cnt])
+  
+  
+# 내가 푼 정답 코드

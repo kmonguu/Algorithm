@@ -15,3 +15,13 @@ for height in heights:
   if height <= l:
     l += 1
 print(l)
+
+
+# 불필요한 변수를 줄인 방법
+# heights 변수를 선언하지 않고, 과일들의 높이를 입력받는 동시에 for문에서 순회하도록 한다.
+
+n, l = map(int, input().split())
+for height in sorted(list(map(int, input().split()))):
+  if height <= l:
+    l += 1
+print(l)

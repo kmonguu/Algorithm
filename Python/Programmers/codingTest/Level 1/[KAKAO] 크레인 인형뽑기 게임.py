@@ -21,6 +21,8 @@
 # 다음과 같은 칸에서 여러번 수를 뽑을 때, 뽑혔던 수는 다시 뽑히지 않게 뽑히고 나면 해당 숫자를 0으로 바꾸어주어 무시되도록 만든다.
 
 # 내가 푼 코드
+# 크레인에서 뽑은 숫자를 바구니에 담긴 가장 최근의 숫자와 비교하여 같은지 판별하여 바구니에 담기 전 걸러준다.
+
 def solution(board, moves):
     stack = [0]
     answer = 0
@@ -37,4 +39,25 @@ def solution(board, moves):
                         
                     b[move-1] = 0
                     break
+    return answer
+
+
+# 다른 사람 코드
+# 크레인이 뽑은 숫자를 모두 바구니에 담은 뒤,
+# 바구니에 담긴 숫자 중 이전에 담긴 수와 최근에 담긴 수 2개를 비교하여 pop하는 방법
+
+def solution(board, moves):
+    answer = 0
+    stack = [0]
+    for move in moves:
+        for b in board:
+            if b[move - 1] != 0:
+                stack.append(b[move - 1])
+                b[move - 1] = 0
+                
+                if stack[-1] == stack[-2]:
+                    stack.pop()
+                    stack.pop()
+                    answer += 2
+                break
     return answer

@@ -20,3 +20,21 @@
 # 마지막으로 4번째 칸에서 4를 뽑고, 최종적으로 바구니에는 [4|2|4]가 담겨있고 터트려져 사라진 숫자의 개수는 4개 이다.
 # 다음과 같은 칸에서 여러번 수를 뽑을 때, 뽑혔던 수는 다시 뽑히지 않게 뽑히고 나면 해당 숫자를 0으로 바꾸어주어 무시되도록 만든다.
 
+# 내가 푼 코드
+def solution(board, moves):
+    stack = [0]
+    answer = 0
+    
+    for move in moves:
+         for b in board:
+                if b[move-1] != 0:
+                    
+                    if stack[-1] == b[move-1]:
+                        stack.pop()
+                        answer += 2
+                    else:
+                        stack.append(b[move-1])
+                        
+                    b[move-1] = 0
+                    break
+    return answer

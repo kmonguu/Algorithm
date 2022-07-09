@@ -43,7 +43,7 @@ def solution(board, moves):
 
 
 # 다른 사람 코드
-# 크레인이 뽑은 숫자를 모두 바구니에 담은 뒤,
+# 크레인이 뽑은 숫자를 모두 바구니에 담고
 # 바구니에 담긴 숫자 중 이전에 담긴 수와 최근에 담긴 수 2개를 비교하여 pop하는 방법
 
 def solution(board, moves):

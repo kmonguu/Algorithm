@@ -10,7 +10,7 @@
  
   
 # 내가 푼 코드
-
+#
 def solution(array, commands):
     answer = []
     for i in commands:

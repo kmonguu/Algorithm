@@ -10,7 +10,6 @@
  
   
 # 내가 푼 코드
-#
 def solution(array, commands):
     answer = []
     for i in commands:
@@ -18,7 +17,7 @@ def solution(array, commands):
     return answer
   
   
-# 내가 이전에 푼 코드
+# 이전에 푼 코드
 # 이전에 비해 인덱스 슬라이싱에 대해 완전히 이해된 느낌이 들었음
 
 def solution(array, commands):

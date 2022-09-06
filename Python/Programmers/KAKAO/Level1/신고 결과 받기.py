@@ -51,7 +51,6 @@ def solution(id_list, report, k):
     return answer
   
     
-    
 # 다른 사람 풀이
 
 def solution(id_list, report, k):
@@ -66,3 +65,4 @@ def solution(id_list, report, k):
             answer[id_list.index(r.split()[0])] += 1
 
     return answer
+

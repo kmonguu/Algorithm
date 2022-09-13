@@ -22,3 +22,27 @@ def fibo(n):
 # 1은 2번 출력되고, 0은 1번 출력된다.
 
 # fibo(n)을 호출했을 때, 0과 1이 각각 몇 번 출력되는지 구하시오.
+# (제한 조건 : n은 40보다 작거나 같은 자연수 또는 0이다.)
+
+
+
+# 시간초과 코드
+# 재귀함수를 이용하여 피보나치 함수를 호출하는 방식으로 구했지만, 제한 조건을 고려하지 못하여 시간초과 발생
+
+global cnt
+cnt = [0, 0]
+
+def fibo(n):
+  if (n == 0):
+      cnt[0] += 1
+  elif (n == 1):
+      cnt[1] += 1
+  else:
+      fibo(n - 1) + fibo(n - 2)
+    
+  return ' '.join(map(str, cnt))
+
+for _ in range(int(input())):
+  cnt = [0, 0]
+  n = int(input())
+  print(fibo(n))

@@ -46,3 +46,6 @@ for _ in range(int(input())):
   cnt = [0, 0]
   n = int(input())
   print(fibo(n))
+
+
+# 정답코드

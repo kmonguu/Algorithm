@@ -9,7 +9,7 @@ def fibo(n):
   else:
       return fibo(n - 1) + fibo(n - 2)
     
-# 위와 같은 함수를 통해 구할 수 있다.
+# 위와 같은 재귀함수를 통해 구할 수 있다.
 
 # fibo(3)을 오출하면 다음과 같은 일이 일어난다.
 # fibonacci(3)은 fibonacci(2)와 fibonacci(1) (첫 번째 호출)을 호출한다.

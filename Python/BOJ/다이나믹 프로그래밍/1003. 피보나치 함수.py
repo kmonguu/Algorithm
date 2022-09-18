@@ -49,4 +49,47 @@ for _ in range(int(input())):
 
 
 # 맞춘 코드
-# 재귀를 사용하지 않고 계산했던 값을 기억하여 다음 값을 구해야함
+# 재귀를 사용하지 않고 미리 배열에 피보나치 수열을 구하여 저장한 뒤 찾아쓰는 방법
+
+fibo = [[0, 0] for _ in range(41)]
+fibo[0] = [1, 0]
+fibo[1] = [0, 1]
+
+nArr=[]  # 테스트 케이스에 맞게 입력받은 n을 저장하는 배열
+maxOfN = 0
+
+for _ in range(int(input())):
+  n = int(input())   
+  nArr.append(n)  # 입력받은 n을 nArr에 저장
+  maxOfN = max(maxOfN, n) # 입력받은 n 중 가장 큰 값을 maxOfN에 저장한다.
+
+for idx in range(2, maxOfN+1):  # 2부터 n의 최댓값까지 피보나치 규칙을 활용하여 0이 나오는 횟수, 1이 나오는 횟수를 구하여 fibo배열에 저장
+  fibo[idx][0] = fibo[idx-1][0] + fibo[idx-2][0]
+  fibo[idx][1] = fibo[idx-1][1] + fibo[idx-2][1]
+
+for n in nArr:  # 미리 fibo 함수에 구해둔 값을 n에 맞게 찾아서 출력
+  print(' '.join(map(str,fibo[n])))
+  
+  
+# 위 방법의 문제점 : n의 값에 상관없이 fibo배열을 무조건 40개를 미리 만들어둠으로 자원의 낭비가 발생
+
+# 해결방법
+# fibo 배열을 n만큼만 생성하여 낭비되는 부분이 없도록 함
+
+t = int(input())
+for _ in range(t):
+    n = int(input())
+
+    if n == 0:
+        print('1 0')
+    else:
+        fibo = [[0, 0] for _ in range(n + 1)]
+        fibo[0] = [1, 0]
+        fibo[1] = [0, 1]
+
+        for idx in range(2, n + 1):
+            fibo[idx][0] = fibo[idx - 1][0] + fibo[idx - 2][0]
+            fibo[idx][1] = fibo[idx - 1][1] + fibo[idx - 2][1]
+
+        print(' '.join(map(str, fibo[n])))
+

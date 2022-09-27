@@ -17,3 +17,28 @@
 # 9일 때 = [9, 1]
 
 # 나머지 1, 5, 6 일 때는 해당 수를 아무리 제곱하더라도 일의 자리가 같다는 것을 알 수 있다.
+
+import sys 
+input = sys.stdin.readline
+
+t = int(input())
+for _ in range(t):
+	a, b = map(int,input().split())
+	aRemain=a%10
+
+	if aRemain == 0: # 패턴 1
+		print(10)
+	elif aRemain in [1,5,6]: 
+		print(aa)
+	elif aRemain in [4,9]: #패턴 2
+		bb=b%2
+		if bb == 0:
+			print(aRemain*aa%10)
+		else:
+			print(aa)
+	else: #패턴 4
+		bb=b%4  
+		if bb ==0:
+			print(aa**4%10)
+		else:
+			print(aa**bb%10)

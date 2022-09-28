@@ -29,16 +29,16 @@ for _ in range(t):
 	if aRemain == 0: # 패턴 1
 		print(10)
 	elif aRemain in [1,5,6]: 
-		print(aa)
+		print(aRemain)
 	elif aRemain in [4,9]: #패턴 2
-		bb=b%2
-		if bb == 0:
+		bRemain=b%2
+		if bRemain == 0:
 			print(aRemain*aa%10)
 		else:
-			print(aa)
+			print(aRemain)
 	else: #패턴 4
-		bb=b%4  
-		if bb ==0:
-			print(aa**4%10)
+		bRemain=b%4  
+		if bRemain ==0:
+			print(aRemain**4%10)
 		else:
 			print(aa**bb%10)

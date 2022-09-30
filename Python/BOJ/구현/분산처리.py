@@ -21,8 +21,8 @@
 import sys 
 input = sys.stdin.readline
 
-t = int(input())
-for _ in range(t):
+testCase = int(input())
+for _ in range(testCase):
 	a, b = map(int,input().split())
 	aRemain=a%10
 

@@ -11,4 +11,11 @@
 # 출력
 # 1 0 0 0 0 1
 
+# 내 코드
 
+origin_chess_num = [1, 1, 2, 2, 2, 8]
+
+current_chess_num = list(map(int, input().split()))
+
+for idx in range(6):
+  print(origin_chess_num[idx]-current_chess_num[idx], end=' ')

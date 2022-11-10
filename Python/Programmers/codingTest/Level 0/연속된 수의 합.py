@@ -7,3 +7,46 @@
 # 5	  |  15	-> [1, 2, 3, 4, 5]
 # 4	  |  14	-> [2, 3, 4, 5]
 
+
+
+# 내가 푼 코드
+
+    answer = []
+    middle = total//num
+
+
+    if num % 2 == 0:
+        answer.append(middle)
+        answer.append(middle+1)
+
+        for _ in range(num//2 -1):
+            first, last = answer[0], answer[-1]
+            answer.insert(0, first-1)
+            answer.append(last+1)
+
+
+    else:
+        answer.append(middle)
+        for _ in range(num//2):
+            first, last = answer[0], answer[-1]
+            answer.insert(0, first-1)
+            answer.append(last+1)
+
+
+    return answer
+  
+  
+# 다른 사람 풀이
+def solution(num, total):
+    answer = []
+    middle = total//num
+    
+    if num % 2 == 1:
+        for i in range(middle-num//2, middle+num//2+1):
+            answer.append(i)
+            
+    else:
+        for i in range(middle-num//2+1, middle+num//2+1):
+            answer.append(i)
+            
+    return answer

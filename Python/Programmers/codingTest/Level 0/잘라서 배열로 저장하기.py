@@ -2,8 +2,8 @@
 
 # 예제
 # my_str                n     result
-# "abc1Addfggg4556b"	6	  ["abc1Ad", "dfggg4", "556b"]
-# "abcdef123"	        3	  ["abc", "def", "123"]
+# "abc1Addfggg4556b"	6     ["abc1Ad", "dfggg4", "556b"]
+# "abcdef123"	        3     ["abc", "def", "123"]
 
 # 내가 푼 코드
 def solution(my_str, n):

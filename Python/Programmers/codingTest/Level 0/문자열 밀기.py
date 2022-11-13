@@ -22,3 +22,11 @@ def solution(A, B):
             return cnt
             
     return -1
+
+
+# 다른 풀이
+# 문자열 B를 두 번 합친 값에서 A를 찾아 A문자열이 시작하는 인덱스를 반환, 없으면 -1반환
+
+def solution(A, B):
+    B = B+B
+    return B.index(A) if A in B else -1

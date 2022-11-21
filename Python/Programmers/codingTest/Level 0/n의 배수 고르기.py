@@ -15,3 +15,9 @@ def solution(n, numlist):
             answer.append(i) 
             
     return answer
+
+
+# 다른 풀이
+def solution(n, numlist):
+    answer = [i for i in numlist if i%n==0]
+    return answer

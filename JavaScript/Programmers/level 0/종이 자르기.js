@@ -8,3 +8,6 @@
 // 1	1	 0
 
 // 내가 푼 코드
+function solution(M, N) {
+    return M*N-1;
+}

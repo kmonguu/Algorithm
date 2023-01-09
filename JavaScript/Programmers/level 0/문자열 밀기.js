@@ -12,3 +12,8 @@
 function solution(A, B) {
     return (B+B).indexOf(A) ?? -1
 }
+
+
+// 다른 사람 풀이
+
+let solution=(a,b)=>(b+b).indexOf(a)

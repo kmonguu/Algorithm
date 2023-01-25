@@ -10,3 +10,6 @@
 // 2. 소문자 문자열을 알파벳 순서로 정렬
 // 3. 배열로 저장된 정렬된 알파벳을 문자열로 출력
 
+function solution(my_string) {
+    return my_string.toLowerCase().split('').sort().join('');
+}

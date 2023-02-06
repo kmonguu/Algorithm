@@ -5,3 +5,17 @@
 // 7	15	229,376
 
 // 내가 푼 코드
+function solution(n, t) {
+    var answer = n;
+    for(let i=1; i<=t; i++){
+        answer *= 2;
+    }
+    return answer;
+}
+
+// js 내장함수 사용한 방법
+// pow로 제곱을 구현할 수 있다.
+
+function solution(n, t) {
+    return n*Math.pow(2,t);
+}

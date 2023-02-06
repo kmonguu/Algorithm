@@ -19,3 +19,10 @@ function solution(n, t) {
 function solution(n, t) {
     return n*Math.pow(2,t);
 }
+
+
+// 비트 연산자를 사용한 방법
+
+function solution(n, t) {
+  return n << t;
+}

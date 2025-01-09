@@ -1,17 +1,16 @@
 function solution(number, k) {
-  const numberArr = Array.from(String(number), Number);
   let answer = [];
 
-  for (let i in numberArr) {
+  for (let i in number) {
     while (
       k > 0 &&
       answer.length > 0 &&
-      numberArr[i] > answer[answer.length - 1]
+      number[i] > answer[answer.length - 1]
     ) {
       answer.pop();
       k -= 1;
     }
-    answer.push(numberArr[i]);
+    answer.push(number[i]);
   }
   return answer.slice(0, answer.length - k).join("");
 }
